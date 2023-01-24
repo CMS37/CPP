@@ -6,13 +6,13 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 07:05:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/25 08:01:11 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/25 08:15:48 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::add(int index) {
+int PhoneBook::add(void) {
 
 	std::string	first_name;
 	std::string	last_name;
@@ -31,6 +31,7 @@ PhoneBook::add(int index) {
 	std::cout << "Darkest Secret : ";
 	std::getline(std::cin, secret);
 	
-	std::cout << first_name << last_name << nickname << phone_num << secret;
+	std::cout << first_name << last_name << nickname << \
+		phone_num << secret << std::endl;
 	return (0);
 }

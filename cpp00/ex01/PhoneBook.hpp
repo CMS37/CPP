@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:53:31 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/25 08:00:12 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/25 08:13:03 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class PhoneBook {
 
 public:
 
-	int	add( int index );
+	int	add( void );
 
 };
 
