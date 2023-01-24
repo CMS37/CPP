@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:53:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/25 04:13:30 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:59:45 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(void)
 		if (!(std::getline(std::cin, cmd)))
 			return (1);
 		if (cmd == "ADD")
+			;
 		// else if (cmd == "SERCH")
 		// else if (cmd == "EXIT")
 		// else
