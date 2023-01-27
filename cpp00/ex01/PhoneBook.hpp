@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:53:31 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/25 08:13:03 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/27 21:47:22 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@
 
 class PhoneBook {
 
+private:
+	std::string	*first_name;
+	std::string	*last_name;
+	std::string	*nickname;
+	std::string	*secret;
+	std::string	*phone_num;
+
 public:
 
-	int	add( void );
+	int	add(int n);
 
 };
 

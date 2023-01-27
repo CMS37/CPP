@@ -6,13 +6,13 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 07:05:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/25 08:15:48 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/27 21:47:37 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int PhoneBook::add(void) {
+int PhoneBook::add(int i) {
 
 	std::string	first_name;
 	std::string	last_name;
@@ -22,6 +22,7 @@ int PhoneBook::add(void) {
 
 	std::cout << "First Name : ";
 	std::getline(std::cin, first_name);
+	this->first_name[i % 8] = first_name;
 	std::cout << "Last Name : ";
 	std::getline(std::cin, last_name);
 	std::cout << "NickName : ";
@@ -31,7 +32,11 @@ int PhoneBook::add(void) {
 	std::cout << "Darkest Secret : ";
 	std::getline(std::cin, secret);
 	
-	std::cout << first_name << last_name << nickname << \
-		phone_num << secret << std::endl;
+	std::cout << first_name << std::endl;
+	std::cout << last_name << std::endl;
+	std::cout << nickname << std::endl;
+	std::cout << phone_num << std::endl;
+	std::cout << secret << std::endl;
+
 	return (0);
 }
