@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 07:05:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/30 20:21:15 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/31 00:11:18 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ void	PhoneBook::setInfo(void) {
 	this->info[i % 8].setNum(i % 8);
 	std::cout << "First Name : ";
 	std::getline(std::cin, cmd);
+	if (cmd.empty())
+	{
+		std::cout << "Wrong input" << std::endl;
+		return ;
+	}
 	this->info[i % 8].setFirstName(cmd);
 	std::cout << "Last Name : ";
 	std::getline(std::cin, cmd);
@@ -40,26 +45,50 @@ void	PhoneBook::setInfo(void) {
 	i++;
 }
 
-void	PhoneBook::serchInfo(void) {
-	std::cout << 
+void	printInfo(std::string str)
+{
+	std::string	tmp;
+	int			len;
+
+	len = str.length();
+	if (len > 10)
+	{
+		tmp = str.substr(0,9);
+		std::cout << "|" << tmp << ".";
+	}
+	else
+	{
+		len -= 10;
+		std::cout << "|";
+		while (len != 0)
+		{
+			std::cout << " ";
+			len++;
+		}
+		std::cout << str;
+	}
 }
 
-int	main(void)
-{
-	Info		info;
-	PhoneBook	book;
-	std::string	cmd;
-	
-	while (1)
+void	PhoneBook::serchInfo(void) {
+	int	i;
+
+	if (this->info[0].getFirstName().empty())
 	{
-		std::cout << "PhoneBook:> ";
-		if (!(std::getline(std::cin, cmd)))
-			return (1);
-		if (cmd == "ADD")
-			book.setInfo();
-		else if (cmd == "SERCH")
-			book.serchInfo();
-		else if (cmd == "EXIT" || cmd == "exit")
-			return (0);
+		std::cout << "No User in book, please add user" << std::endl;
+		return ;
+	}
+	else
+		std::cout << "|     Index| FirstName|  LastName|  NickName|" << std::endl;
+	i = -1;
+	while (++i < 8)
+	{	
+		if (!this->info[i].getFirstName().empty())
+		{
+			std::cout << "|         " << this->info[i].getNum();
+			printInfo(this->info[i].getFirstName());
+			printInfo(this->info[i].getLastName());
+			printInfo(this->info[i].getNickName());
+			std::cout << "|" << std::endl;
+		}
 	}
 }

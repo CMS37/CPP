@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:37:52 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/30 20:17:37 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/31 00:13:27 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ public:
 	void		setSecret(std::string secret);
 	void		setPhoneNum(std::string phoneNum);
 	void		setNum(int num);
-	std::string getFirstName();
-	std::string getLastName();
-	std::string getNickName();
-	std::string getSecret();
-	std::string getPhoneNum();
-	int			getNum();
+	std::string getFirstName(void);
+	std::string getLastName(void);
+	std::string getNickName(void);
+	std::string getSecret(void);
+	std::string getPhoneNum(void);
+	int			getNum(void);
 };
 
 #endif
