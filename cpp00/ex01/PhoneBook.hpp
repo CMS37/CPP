@@ -6,28 +6,23 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:53:31 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/27 21:47:22 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/30 20:10:56 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONE_BOOK_H
 # define PHONE_BOOK_H
 
-# include <iostream>
+# include "Info.hpp"
 
 class PhoneBook {
 
 private:
-	std::string	*first_name;
-	std::string	*last_name;
-	std::string	*nickname;
-	std::string	*secret;
-	std::string	*phone_num;
+	Info	info[8];
 
 public:
-
-	int	add(int n);
-
+	void	setInfo();
+	void	serchInfo();
 };
 
 #endif

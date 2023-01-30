@@ -6,37 +6,60 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 07:05:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/27 21:47:37 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/01/30 20:21:15 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int PhoneBook::add(int i) {
-
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_num;
-	std::string	secret;
-
-	std::cout << "First Name : ";
-	std::getline(std::cin, first_name);
-	this->first_name[i % 8] = first_name;
-	std::cout << "Last Name : ";
-	std::getline(std::cin, last_name);
-	std::cout << "NickName : ";
-	std::getline(std::cin, nickname);
-	std::cout << "Phone Number : ";
-	std::getline(std::cin, phone_num);
-	std::cout << "Darkest Secret : ";
-	std::getline(std::cin, secret);
+void	PhoneBook::setInfo(void) {
+	static int	i = 0;
+	std::string firstName;
+	std::string	lastName;
+	std::string	nickName;
+	std::string secret;
+	std::string	phoneNum;
+	std::string	cmd;
 	
-	std::cout << first_name << std::endl;
-	std::cout << last_name << std::endl;
-	std::cout << nickname << std::endl;
-	std::cout << phone_num << std::endl;
-	std::cout << secret << std::endl;
+	this->info[i % 8].setNum(i % 8);
+	std::cout << "First Name : ";
+	std::getline(std::cin, cmd);
+	this->info[i % 8].setFirstName(cmd);
+	std::cout << "Last Name : ";
+	std::getline(std::cin, cmd);
+	this->info[i % 8].setLastName(cmd);
+	std::cout << "Nick Name : ";
+	std::getline(std::cin, cmd);
+	this->info[i % 8].setNickName(cmd);
+	std::cout << "Secret : ";
+	std::getline(std::cin, cmd);
+	this->info[i % 8].setSecret(cmd);
+	std::cout << "Phone Number : ";
+	std::getline(std::cin, cmd);
+	this->info[i % 8].setPhoneNum(cmd);
+	i++;
+}
 
-	return (0);
+void	PhoneBook::serchInfo(void) {
+	std::cout << 
+}
+
+int	main(void)
+{
+	Info		info;
+	PhoneBook	book;
+	std::string	cmd;
+	
+	while (1)
+	{
+		std::cout << "PhoneBook:> ";
+		if (!(std::getline(std::cin, cmd)))
+			return (1);
+		if (cmd == "ADD")
+			book.setInfo();
+		else if (cmd == "SERCH")
+			book.serchInfo();
+		else if (cmd == "EXIT" || cmd == "exit")
+			return (0);
+	}
 }

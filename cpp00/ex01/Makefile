@@ -6,7 +6,7 @@
 #    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 22:50:35 by min-cho           #+#    #+#              #
-#    Updated: 2023/01/25 07:41:12 by min-cho          ###   ########.fr        #
+#    Updated: 2023/01/30 20:07:58 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS_DIR	= .
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		PhoneBook.cpp
+		PhoneBook.cpp \
+		Info.cpp
 		
 SRCS := ${addprefix ${SRCS_DIR}/, ${SRCS}}
 OBJS := ${SRCS:${SRCS_DIR}/%.cpp=${OBJS_DIR}/%.o}
