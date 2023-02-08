@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 04:19:25 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 04:19:25 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/08 19:45:18 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/08 19:45:18 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#include "Harl.hpp"
 
-# include <fstream>
-# include <sstream>
-# include <iostream>
-
-class Replace
+int	main(void)
 {
-	private:
+	Harl harl;
 
-	public:
-		Replace();
-		~Replace();
-
-		static std::string readFile(std::ifstream &fin);
-		static void	doReplace(std::string *buf, std::string s1, std::string s2);
-};
-
-#endif
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	return (0);
+}

@@ -19,13 +19,14 @@ int main(int argc, char **argv)
 		std::cout << "Wrong Arguments" << std::endl;
 		exit(1);
 	}
-	std::ifstream inFile(argv[1]);
-	std::ofstream outFile(static_cast<std::string>(argv[1]) + ".replace");
-	if (inFile.is_open() && outFile.is_open())
+	std::ifstream fin(argv[1]);
+	std::ofstream fout(static_cast<std::string>(argv[1]) + ".replace");
+	if (fin.is_open() && fout.is_open())
 	{
-		//문자열읽어서 재배치
-		inFile.close();
-		outFile.close();
+		std::string buf = Replace::readFile(fin); //???
+		Replace::doReplace(&buf, argv[2], argv[3]);
+		fin.close();
+		fout.close();
 	}
 	else
 	{
