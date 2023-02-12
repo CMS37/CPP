@@ -18,8 +18,13 @@ int main(void)
 	std::string *ptr = &str;
 	std::string& ref = str;
 
-	std::cout << "Print str : " << str << std::endl;
-	std::cout << "Print ptr : " << ptr << std::endl;
-	std::cout << "Print ref : " << ref << std::endl;
+	std::cout << "Memory address" << std::endl;
+	std::cout << "string : " << &str << std::endl;
+	std::cout << "pointer : " << &ptr << std::endl;
+	std::cout << "reference : "<< &ref << std::endl;
+	std::cout << "Print string" << std::endl;
+	std::cout << str << std::endl;
+	std::cout << ptr << std::endl;
+	std::cout << ref << std::endl;
 	return (0);
 }

@@ -23,8 +23,11 @@ int main(int argc, char **argv)
 	std::ofstream fout(static_cast<std::string>(argv[1]) + ".replace");
 	if (fin.is_open() && fout.is_open())
 	{
-		std::string buf = Replace::readFile(fin); //???
+		std::string buf = Replace::readFile(fin);
 		Replace::doReplace(&buf, argv[2], argv[3]);
+		fout << buf;
+		std::cout << fin.rdbuf() << std::endl;
+		std::cout << fout.rdbuf() << std::endl;
 		fin.close();
 		fout.close();
 	}

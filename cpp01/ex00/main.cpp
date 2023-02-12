@@ -14,10 +14,9 @@
 
 int main(void)
 {
-	Zombie	*zom;
-	Zombie	zom1("zom2");
+	Zombie	*zom = Zombie::newZombie("zom1"); //동적할당 (힙)
+	Zombie	zom1("zom2"); //정적할당 (스택)
 
-	zom = Zombie::newZombie("zom1");
 	zom->announce();
 	zom1.announce();
 

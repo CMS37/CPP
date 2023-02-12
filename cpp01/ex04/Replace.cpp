@@ -22,7 +22,7 @@ Replace::~Replace()
 
 }
 
-std::string	Replace::readFile(std::ifstream &fin)
+std::string	Replace::readFile(std::ifstream& fin)
 {
 	std::stringstream buf;
 	buf << fin.rdbuf();

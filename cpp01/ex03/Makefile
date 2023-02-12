@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	rpg
+NAME		=	a.out
 
 CXX			= 	clang++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
