@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap a("a");
-	ClapTrap b("b");
+	ScavTrap a("a");
+	ScavTrap b("b");
 
 	a.attack("b");
 	b.takeDamage(a.getDamage());
 	b.beRepaired(5);
+	a.guardGate();
 	return (0);
 }
