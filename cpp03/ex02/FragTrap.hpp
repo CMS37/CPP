@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 16:54:27 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 16:54:27 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_CPP
+# define FRAGTRAP_CPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	public:
+		FragTrap();
+		~FragTrap();
+		FragTrap(std::string name);
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
-}
+		void	attack(const std::string& target);
+		void	beRepaired(unsigned int amount);
+		void	highFivesGuys(void);
+};
+
+#endif

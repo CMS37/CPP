@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:18:39 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:18:39 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Dog.hpp"
 
-int	main(void)
+Dog::Dog()
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	_type = "Dog";
+	std::cout << "A Wild Dog Appears" << std::endl;
+}
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
+Dog::~Dog()
+{
+	std::cout << "Dog is gone... " << std::endl;
+}
+
+void	Dog::makeSound(void) const
+{
+	std::cout << "Wal! Wal!" << std::endl;
+}
+
+std::string	Dog::getType(void) const
+{
+	return (_type);
 }

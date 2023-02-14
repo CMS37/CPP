@@ -19,6 +19,7 @@ OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
 		ClapTrap.cpp
+		ScavTrap.cpp
 
 OBJS := ${SRCS:${SRCS_DIR}/%.cpp=${OBJS_DIR}/%.o}
 

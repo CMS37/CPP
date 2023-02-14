@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:19:37 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:19:37 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Cat.hpp"
 
-int	main(void)
+Cat::Cat()
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	_type = "Cat";
+	std::cout << "A Wild Cat Appears" << std::endl;
+}
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
+Cat::~Cat()
+{
+	std::cout << "Cat is gone..." << std::endl;
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Meowwwww" << std::endl;
+}
+
+std::string Cat::getType(void) const
+{
+	return (_type);
 }

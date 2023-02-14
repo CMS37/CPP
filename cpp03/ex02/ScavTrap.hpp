@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScaveTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/13 06:27:13 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/13 06:27:13 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	public:
+		ScavTrap();
+		~ScavTrap();
+		ScavTrap(std::string name);
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
-}
+		void	attack(const std::string& target);
+		void	beRepaired(unsigned int amount);
+		void	guardGate(void);
+};
+
+#endif

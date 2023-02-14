@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScaveTrap.cpp                                      :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 06:27:06 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 06:27:06 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 16:57:00 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 16:57:00 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
 
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "ScavTrap " << _name << " out of game" << std::endl;
+	std::cout << "FragTrap " << _name << " out of game" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScaveTrap " << name << " ready" <<std::endl;
+	std::cout << "FragTrap " << name << " ready" <<std::endl;
 	_name = name;
 	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+	_energyPoints = 100;
+	_attackDamage = 30;
 }
 
-void	ScavTrap::attack(const std::string& target)
+void	FragTrap::attack(const std::string& target)
 {
 	if (_energyPoints < 1)
 		std::cout << "Don't have Energy Points" << std::endl;
 	else
 	{
 		_energyPoints -= 1;
-		std::cout << "ScavTrap " << _name << " attacks " << target 
+		std::cout << "FragTrap " << _name << " attacks " << target 
 			<< ", causing " << _attackDamage << " points of damage!" << std::endl;
 	}
 }
 
-void	ScavTrap::beRepaired(unsigned int amount)
+void	FragTrap::beRepaired(unsigned int amount)
 {
 	if (_energyPoints < 1)
 	{
@@ -54,11 +54,11 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		_hitPoints = 10;
 	else
 		_hitPoints += amount;
-	std::cout << "ScavTrap " << _name << " repair " << amount << ", left "
+	std::cout << "FragTrap " << _name << " repair " << amount << ", left "
 		<< _hitPoints << "hit points" << std::endl;
 }
 
-void	ScavTrap::guardGate(void)
+void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "ScavTrap " << _name << " is going to guard Gate!" << std::endl;
+	std::cout << "FragTrap " << _name << " High Five!" << std::endl;
 }

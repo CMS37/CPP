@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:17:39 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:17:39 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int	main(void)
+# include "Animal.hpp"
+
+class Cat : public Animal
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	public:
+		Cat();
+		~Cat();
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
-}
+		void		makeSound(void) const;
+		std::string	getType(void) const;
+};
+
+#endif

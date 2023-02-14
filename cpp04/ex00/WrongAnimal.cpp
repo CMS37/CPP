@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:11:52 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:11:52 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "WrongAnimal.hpp"
 
-int	main(void)
+WrongAnimal::WrongAnimal()
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	std::cout << "An WrongAnimal Appears" << std::endl;
+}
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "WrongAnimal is gone..." << std::endl;
+}
+
+void	WrongAnimal::makeSound(void) const
+{
+	std::cout << "...." << std::endl;
+}
+
+std::string WrongAnimal::getType(void) const
+{
+	return (_type);
 }

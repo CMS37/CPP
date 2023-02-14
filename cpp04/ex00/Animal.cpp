@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:11:52 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:11:52 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Animal.hpp"
 
-int	main(void)
+Animal::Animal()
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	std::cout << "An animal Appears" << std::endl;
+}
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
+Animal::~Animal()
+{
+	std::cout << "Animal is gone..." << std::endl;
+}
+
+void	Animal::makeSound(void) const
+{
+	std::cout << "...." << std::endl;
+}
+
+std::string Animal::getType(void) const
+{
+	return (_type);
 }

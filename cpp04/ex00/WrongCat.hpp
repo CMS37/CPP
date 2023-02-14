@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:17:39 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:17:39 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef WrongCAT_HPP
+# define WrongCAT_HPP
 
-int	main(void)
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	public:
+		WrongCat();
+		~WrongCat();
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
-}
+		void		makeSound(void) const;
+		std::string	getType(void) const;
+};
+
+#endif

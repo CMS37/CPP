@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:19:37 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:19:37 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "WrongCat.hpp"
 
-int	main(void)
+WrongCat::WrongCat()
 {
-	ScavTrap a("a");
-	ScavTrap b("b");
+	_type = "WrongCat";
+	std::cout << "A Wild WrongCat Appears" << std::endl;
+}
 
-	a.attack("b");
-	b.takeDamage(a.getDamage());
-	b.beRepaired(5);
-	a.guardGate();
-	return (0);
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat is gone..." << std::endl;
+}
+
+void	WrongCat::makeSound(void) const
+{ 
+	std::cout << "Wrong Cat called" << std::endl;
+}
+
+std::string WrongCat::getType(void) const
+{
+	return (_type);
 }
