@@ -12,24 +12,28 @@
 
 #include "Bureaucrat.hpp"
 
-Bureacrat::Bureacrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade)
 {
+	if (grade < 1)
+		Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		Bureaucrat::GradeTooLowException();
 	_name = name;
 	_grade = grade;
 }
 
-Bureacrat::~Bureacrat()
+Bureaucrat::~Bureaucrat()
 {
 
 }
 
-Bureacrat::Bureacrat(const Bureacrat &f)
+Bureaucrat::Bureaucrat(const Bureaucrat &f)
 {
 	_name = f.getName();
 	_grade = f.getGrade();
 }
 
-Bureacrat& Bureacrat::operator=(const Bureacrat &f)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &f)
 {
 	if (this != &f)
 	{
@@ -39,12 +43,20 @@ Bureacrat& Bureacrat::operator=(const Bureacrat &f)
 	return (*this);
 }
 
-std::string Bureacrat::getName(void) const
+std::string Bureaucrat::getName(void) const
 {
 	return (_name);
 }
 
-int	Bureacrat::getGrade(void) const
+int	Bureaucrat::getGrade(void) const
 {
 	return (_grade);
+}
+
+std::ostream& operator<<(std::ostream &o, const Bureaucrat &f)
+{
+	o << f.getName();
+	o << ", bureaucrat grade ";
+	o << f.getGrade();
+	return (o);
 }
