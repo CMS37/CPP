@@ -13,7 +13,6 @@
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-# include <iostream>
 # include "Brain.hpp"
 
 class Animal
@@ -24,9 +23,12 @@ class Animal
 	public:
 		Animal();
 		virtual ~Animal();
+		Animal(const Animal &f);
+		Animal&	operator=(const Animal &f);
 
 		virtual void		makeSound(void) const;
 		virtual std::string	getType(void) const;
+		virtual Brain		*getBrain(void) const;
 };
 
 #endif

@@ -22,6 +22,20 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal is gone..." << std::endl;
 }
 
+WrongAnimal::WrongAnimal(const WrongAnimal &f)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	_type = f.getType();
+}
+
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &f)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &f)
+		_type = f.getType();
+	return (*this);
+}
+
 void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "...." << std::endl;

@@ -23,6 +23,8 @@ class WrongAnimal
 	public:
 		WrongAnimal();
 		virtual ~WrongAnimal();
+		WrongAnimal(const WrongAnimal &f);
+		WrongAnimal&	operator=(const WrongAnimal &f);
 
 		void		makeSound(void) const;
 		std::string	getType(void) const;

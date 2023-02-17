@@ -22,6 +22,20 @@ Animal::~Animal()
 	std::cout << "Animal is gone..." << std::endl;
 }
 
+Animal::Animal(const Animal &f)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	_type = f.getType();
+}
+
+Animal& Animal::operator=(const Animal &f)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &f)
+		_type = f.getType();
+	return (*this);
+}
+
 void	Animal::makeSound(void) const
 {
 	std::cout << "...." << std::endl;

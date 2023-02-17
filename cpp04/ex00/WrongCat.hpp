@@ -20,6 +20,8 @@ class WrongCat : public WrongAnimal
 	public:
 		WrongCat();
 		~WrongCat();
+		WrongCat(const WrongCat &f);
+		WrongCat&	operator=(const WrongCat &f);
 
 		void		makeSound(void) const;
 		std::string	getType(void) const;

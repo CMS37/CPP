@@ -20,6 +20,8 @@ class Dog : public Animal
 	public:
 		Dog();
 		~Dog();
+		Dog(const Dog &f);
+		Dog&	operator=(const Dog &f);
 
 		void		makeSound(void) const;
 		std::string	getType(void) const;

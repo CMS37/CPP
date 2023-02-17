@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:19:37 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:19:37 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:11:52 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:11:52 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat()
+Animal::Animal()
 {
-	_type = "Cat";
-	std::cout << "A Wild Cat Appears" << std::endl;
+	_type = "";
+	std::cout << "An animal Appears" << std::endl;
 }
 
-Cat::~Cat()
+Animal::~Animal()
 {
-	std::cout << "Cat is gone..." << std::endl;
+	std::cout << "Animal is gone..." << std::endl;
 }
 
-Cat::Cat(const Cat &f)
+Animal::Animal(const Animal &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	_type = f.getType();
 }
 
-Cat& Cat::operator=(const Cat &f)
+Animal& Animal::operator=(const Animal &f)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &f)
@@ -37,12 +37,7 @@ Cat& Cat::operator=(const Cat &f)
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
-{
-	std::cout << "Meowwwww" << std::endl;
-}
-
-std::string Cat::getType(void) const
+std::string Animal::getType(void) const
 {
 	return (_type);
 }
