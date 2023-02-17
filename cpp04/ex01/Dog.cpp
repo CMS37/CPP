@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:08:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:08:04 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:18:39 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:18:39 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
 
-int main(void)
+Dog::Dog()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	_type = "Dog";
+	std::cout << "A Wild Dog Appears" << std::endl;
+}
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+Dog::~Dog()
+{
+	std::cout << "Dog is gone... " << std::endl;
+}
 
-	delete j;//should not create a leak
-	delete i;
+void	Dog::makeSound(void) const
+{
+	std::cout << "Wal! Wal!" << std::endl;
+}
 
-	return (0);
+std::string	Dog::getType(void) const
+{
+	return (_type);
 }

@@ -12,16 +12,6 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
-
-}
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "ClapTrap " << _name << " out of game" << std::endl;
-}
-
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "ClapTrap " << name << " ready" <<std::endl;
@@ -29,6 +19,33 @@ ClapTrap::ClapTrap(std::string name)
 	_hitPoints = 10;
 	_energyPoints = 10;
 	_attackDamage = 0;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap " << _name << " out of game" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &f)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	_name = f.getName();
+	_hitPoints = f.getHitPoints();
+	_energyPoints = f.getEnergyPoints();
+	_attackDamage = f.getDamage();
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &f)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &f)
+	{
+		_name = f.getName();
+		_hitPoints = f.getHitPoints();
+		_energyPoints = f.getEnergyPoints();
+		_attackDamage = f.getDamage();
+	}
+	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -73,7 +90,22 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		<< _hitPoints << "hit points" << std::endl;
 }
 
-unsigned int	ClapTrap::getDamage(void)
+std::string	ClapTrap::getName(void) const
+{
+	return (_name);
+}
+
+unsigned int	ClapTrap::getHitPoints(void) const
+{
+	return (_hitPoints);
+}
+
+unsigned int	ClapTrap::getEnergyPoints(void) const
+{
+	return (_energyPoints);
+}
+
+unsigned int	ClapTrap::getDamage(void) const
 {
 	return (_attackDamage);
 }

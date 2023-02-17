@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 20:18:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 20:18:34 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/17 16:16:40 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/17 16:16:40 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
-# include <cmath>
 
-class Fixed
+class Brain
 {
 	private:
-		int					_raw;
-		static const int	_bits = 8;
+		std::string ideas[100];
 
 	public:
-		Fixed();
-		Fixed(const int i);
-		Fixed(const float f);
-		~Fixed();
-		Fixed(const Fixed &f);	
-		Fixed&	operator=(const Fixed &f);
-
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
+		Brain();
+		~Brain();
+		
 };
 
-std::ostream& operator<<(std::ostream& o, const Fixed& f);
-
-#endif 
+#endif

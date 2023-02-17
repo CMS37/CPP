@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 20:18:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 20:18:34 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:10:41 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:10:41 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
+# include "Brain.hpp"
 
-class Fixed
+class Animal
 {
-	private:
-		int					_raw;
-		static const int	_bits = 8;
+	protected:
+		std::string _type;
 
 	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed &f);
-		Fixed&	operator=(const Fixed &f);
+		Animal();
+		virtual ~Animal();
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		virtual void		makeSound(void) const;
+		virtual std::string	getType(void) const;
 };
 
-#endif 
+#endif

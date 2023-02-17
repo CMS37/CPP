@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:08:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:08:04 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/02/14 17:11:52 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/14 17:11:52 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 
-int main(void)
+Animal::Animal()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	std::cout << "An animal Appears" << std::endl;
+}
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+Animal::~Animal()
+{
+	std::cout << "Animal is gone..." << std::endl;
+}
 
-	delete j;//should not create a leak
-	delete i;
+void	Animal::makeSound(void) const
+{
+	std::cout << "...." << std::endl;
+}
 
-	return (0);
+std::string Animal::getType(void) const
+{
+	return (_type);
 }

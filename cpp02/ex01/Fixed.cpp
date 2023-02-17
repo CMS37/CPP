@@ -37,13 +37,14 @@ Fixed::~Fixed()
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_raw = f._raw;
+	_raw = f.getRawBits();
 }
 
 Fixed& Fixed::operator=(const Fixed &f)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	_raw = f.getRawBits();
+	if (this != &f)
+		_raw = f.getRawBits();
 	return (*this);
 }
 

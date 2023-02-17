@@ -12,16 +12,6 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-{
-
-}
-
-ScavTrap::~ScavTrap()
-{
-	std::cout << "ScavTrap " << _name << " out of game" << std::endl;
-}
-
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScaveTrap " << name << " ready" <<std::endl;
@@ -29,6 +19,33 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+}
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap " << _name << " out of game" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &f) : ClapTrap("ScavTrap")
+{
+	std::cout << "Scav Copy constructor called" << std::endl;
+	_name = f.getName();
+	_hitPoints = f.getHitPoints();
+	_energyPoints = f.getEnergyPoints();
+	_attackDamage = f.getDamage();
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap &f)
+{
+	std::cout << "Scav Copy assignment operator called" << std::endl;
+	if (this != &f)
+	{
+		_name = f.getName();
+		_hitPoints = f.getHitPoints();
+		_energyPoints = f.getEnergyPoints();
+		_attackDamage = f.getDamage();
+	}
+	return (*this);
 }
 
 void	ScavTrap::attack(const std::string& target)
