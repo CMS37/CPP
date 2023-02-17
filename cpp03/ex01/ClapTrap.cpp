@@ -28,7 +28,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &f)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	_name = f.getName();
 	_hitPoints = f.getHitPoints();
 	_energyPoints = f.getEnergyPoints();
@@ -37,7 +37,7 @@ ClapTrap::ClapTrap(const ClapTrap &f)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &f)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
 	if (this != &f)
 	{
 		_name = f.getName();

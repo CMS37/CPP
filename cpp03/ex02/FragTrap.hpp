@@ -18,9 +18,10 @@
 class FragTrap : public ClapTrap
 {
 	public:
-		FragTrap();
-		~FragTrap();
 		FragTrap(std::string name);
+		~FragTrap();
+		FragTrap(const FragTrap &f);
+		FragTrap& operator=(const FragTrap &f);
 
 		void	attack(const std::string& target);
 		void	beRepaired(unsigned int amount);

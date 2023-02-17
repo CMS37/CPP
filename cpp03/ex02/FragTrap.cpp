@@ -12,16 +12,6 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
-{
-
-}
-
-FragTrap::~FragTrap()
-{
-	std::cout << "FragTrap " << _name << " out of game" << std::endl;
-}
-
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap " << name << " ready" <<std::endl;
@@ -29,6 +19,33 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
+}
+
+FragTrap::~FragTrap()
+{
+	std::cout << "FragTrap " << _name << " out of game" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &f) : ClapTrap("FragTrap")
+{
+	std::cout << "FragTrap Copy constructor called" << std::endl;
+	_name = f.getName();
+	_hitPoints = f.getHitPoints();
+	_energyPoints = f.getEnergyPoints();
+	_attackDamage = f.getDamage();
+}
+
+FragTrap& FragTrap::operator=(const FragTrap &f)
+{
+	std::cout << "FragTrap Copy assignment operator called" << std::endl;
+	if (this != &f)
+	{
+		_name = f.getName();
+		_hitPoints = f.getHitPoints();
+		_energyPoints = f.getEnergyPoints();
+		_attackDamage = f.getDamage();
+	}
+	return (*this);
 }
 
 void	FragTrap::attack(const std::string& target)
