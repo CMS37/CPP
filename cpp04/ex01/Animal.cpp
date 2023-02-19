@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:11:52 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:11:52 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 23:14:17 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::~Animal()
 Animal::Animal(const Animal &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_type = f.getType();
+	*this = f;
 }
 
 Animal& Animal::operator=(const Animal &f)
@@ -44,9 +44,4 @@ void	Animal::makeSound(void) const
 std::string Animal::getType(void) const
 {
 	return (_type);
-}
-
-Brain	*Animal::getBrain(void) const
-{
-	std::cout << "No Brain" << std::endl;
 }

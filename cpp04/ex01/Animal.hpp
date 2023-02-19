@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:10:41 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:10:41 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 23:14:22 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal
 
 		virtual void		makeSound(void) const;
 		virtual std::string	getType(void) const;
-		virtual Brain		*getBrain(void) const;
+		virtual Brain		*getBrain(void) const = 0;
 };
 
 #endif

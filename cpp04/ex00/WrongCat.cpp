@@ -23,6 +23,20 @@ WrongCat::~WrongCat()
 	std::cout << "WrongCat is gone..." << std::endl;
 }
 
+WrongCat::WrongCat(const WrongCat &f)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = f;
+}
+
+WrongCat& WrongCat::operator=(const WrongCat &f)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &f)
+		_type = f.getType();
+	return (*this);
+}
+
 void	WrongCat::makeSound(void) const
 { 
 	std::cout << "Wrong Cat called" << std::endl;

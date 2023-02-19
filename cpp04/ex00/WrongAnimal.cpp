@@ -25,7 +25,7 @@ WrongAnimal::~WrongAnimal()
 WrongAnimal::WrongAnimal(const WrongAnimal &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_type = f.getType();
+	*this = f;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal &f)

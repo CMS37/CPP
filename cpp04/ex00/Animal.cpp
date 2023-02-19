@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:11:52 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:11:52 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 22:58:59 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::~Animal()
 Animal::Animal(const Animal &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_type = f.getType();
+	*this = f;
 }
 
 Animal& Animal::operator=(const Animal &f)

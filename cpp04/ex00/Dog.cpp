@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:18:39 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:18:39 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 23:02:09 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::~Dog()
 Dog::Dog(const Dog &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_type = f.getType();
+	*this = f;
 }
 
 Dog& Dog::operator=(const Dog &f)
