@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 20:18:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 20:18:34 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 21:21:24 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FIXED_HPP
 
 # include <iostream>
-# include <cmath>
 
 class Fixed
 {

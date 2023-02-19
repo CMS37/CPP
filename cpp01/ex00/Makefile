@@ -6,13 +6,13 @@
 #    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 04:12:47 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/19 16:26:12 by min-cho          ###   ########.fr        #
+#    Updated: 2023/02/19 19:49:57 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Zombie
+NAME		=	zombie
 
-CXX			= 	clang++
+CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs

@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 20:18:25 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 20:18:25 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 21:11:34 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : _raw(0)
 {
-	_raw = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -26,7 +25,7 @@ Fixed::~Fixed()
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_raw = f.getRawBits();
+	*this = f;
 }
 
 Fixed& Fixed::operator=(const Fixed &f)

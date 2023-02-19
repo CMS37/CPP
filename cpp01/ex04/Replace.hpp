@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 04:19:25 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 04:19:25 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 20:20:40 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 class Replace
 {
-	private:
-
 	public:
 		Replace();
 		~Replace();

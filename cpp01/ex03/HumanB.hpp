@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 05:04:22 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/06 05:04:22 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 20:10:01 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ class HumanB
 		std::string	_name;
 
 	public:
-		HumanB();
 		HumanB(std::string name);
 		~HumanB();
 
 		void	attack();
-		void	setWeapon(Weapon *weapon);
+		void	setWeapon(Weapon& weapon);
 };
 
 #endif

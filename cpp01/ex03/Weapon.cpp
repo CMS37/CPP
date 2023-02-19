@@ -3,31 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 05:03:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/06 05:03:34 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 20:16:07 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon()
-{
+Weapon::Weapon(std::string type) : _type(type) {}
 
-}
+Weapon::~Weapon() {}
 
-Weapon::Weapon(std::string type)
-{
-	_type = type;
-}
-
-Weapon::~Weapon()
-{
-
-}
-
-std::string Weapon::getType()
+std::string Weapon::getType(void) const
 {
 	return (_type);
 }

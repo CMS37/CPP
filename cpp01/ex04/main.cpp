@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 05:30:36 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/06 05:30:36 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 20:47:43 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int main(int argc, char **argv)
 		std::string buf = Replace::readFile(fin);
 		Replace::doReplace(&buf, argv[2], argv[3]);
 		fout << buf;
-		std::cout << fin.rdbuf() << std::endl;
-		std::cout << fout.rdbuf() << std::endl;
 		fin.close();
 		fout.close();
 	}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScaveTrap.cpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 06:27:06 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 06:27:06 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 22:44:36 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(const ScavTrap &f) : ClapTrap("ScavTrap")
 {
 	std::cout << "Scav Copy constructor called" << std::endl;
-	_name = f.getName();
-	_hitPoints = f.getHitPoints();
-	_energyPoints = f.getEnergyPoints();
-	_attackDamage = f.getDamage();
+	*this = f;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap &f)
@@ -60,6 +57,24 @@ void	ScavTrap::attack(const std::string& target)
 	}
 }
 
+void	ScavTrap::takeDamage(unsigned int amount)
+{
+	if (_hitPoints <= amount)
+	{
+		_hitPoints = 0;
+		_energyPoints = 0;
+		std::cout << "ScavTrap " << _name << " take " 
+			<< amount << " Damage, left " << _hitPoints << " hit potints"<< std::endl;
+		std::cout << "ScavTrap " << _name << " die" << std::endl;
+	}
+	else
+	{
+		_hitPoints -= amount;
+		std::cout << "ScavTrap " << _name << " take " 
+			<< amount << " Damage, left " << _hitPoints << "hit potints"<< std::endl;
+	}
+}
+
 void	ScavTrap::beRepaired(unsigned int amount)
 {
 	if (_energyPoints < 1)
@@ -67,12 +82,12 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		std::cout << "Don't have Energy Points" << std::endl;
 		return ;
 	}
-	else if (_hitPoints + amount > 10)
-		_hitPoints = 10;
+	else if (_hitPoints + amount > 100)
+		_hitPoints = 100;
 	else
 		_hitPoints += amount;
 	std::cout << "ScavTrap " << _name << " repair " << amount << ", left "
-		<< _hitPoints << "hit points" << std::endl;
+		<< _hitPoints << " hit points" << std::endl;
 }
 
 void	ScavTrap::guardGate(void)

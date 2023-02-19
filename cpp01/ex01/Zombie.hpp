@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 04:14:14 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/06 04:14:14 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 19:54:51 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Zombie
 		Zombie(std::string name);
 		~Zombie();
 	
-		void	announce(void);
+		void			announce(void);
 		static Zombie	*zombieHorde(int N, std::string name);
 };
 

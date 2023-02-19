@@ -3,24 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 04:14:11 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/06 04:14:11 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 19:52:10 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
-{
-
-}
-
-Zombie::Zombie(std::string name)
-{
-	_name = name;
-}
+Zombie::Zombie(std::string name) : _name(name) {}
 
 Zombie::~Zombie()
 {

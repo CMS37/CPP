@@ -3,32 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 05:03:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/06 05:03:58 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 20:12:21 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA()
-{
+HumanA::HumanA(std::string name, Weapon& weapon) : _weapon(weapon), _name(name) {}
 
-}
-
-HumanA::HumanA(std::string name, Weapon *weapon)
-{
-	_name = name;
-	_weapon = weapon;
-}
-
-HumanA::~HumanA()
-{
-
-}
+HumanA::~HumanA() {}
 
 void	HumanA::attack()
 {
-	std::cout << _name << "attacks with his " << _weapon->getType() << std::endl;
+	std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
 }

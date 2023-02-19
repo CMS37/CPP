@@ -6,13 +6,13 @@
 #    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/19 16:27:19 by min-cho          ###   ########.fr        #
+#    Updated: 2023/02/19 21:02:48 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	a.out
 
-CXX			= 	clang++
+CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs

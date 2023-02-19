@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 20:18:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/08 20:18:34 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 21:41:03 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ class Fixed
 		bool	operator<=(const Fixed &f) const;
 		bool	operator==(const Fixed &f) const;
 		bool	operator!=(const Fixed &f) const;
-		Fixed&	operator+(const Fixed &f);
-		Fixed&	operator-(const Fixed &f);
-		Fixed&	operator*(const Fixed &f);
-		Fixed&	operator/(const Fixed &f);
-		Fixed&	operator++(void);
-		Fixed&	operator++(int);
-		Fixed&	operator--(void);
-		Fixed&	operator--(int);
+		Fixed	operator+(const Fixed &f);
+		Fixed	operator-(const Fixed &f);
+		Fixed	operator*(const Fixed &f);
+		Fixed	operator/(const Fixed &f);
+		Fixed	operator++(void);
+		Fixed	operator++(int);
+		Fixed	operator--(void);
+		Fixed	operator--(int);
 
 		int					getRawBits(void) const;
 		void				setRawBits(int const raw);
@@ -66,4 +66,5 @@ std::ostream& operator<<(std::ostream& o, const Fixed& f);
 곱한 결과로 _fixed_point를 저장해둔 뒤, 
 toFloat이라는 멤버 함수로 찾을 때는 1을 8 비트만큼 왼쪽으로 쉬프팅한 값을 나누면 roundf를 통해 원래 값에서 정확히 8비트만 남은 값으로 찾아낼 수 있다.
 */
+
 #endif 

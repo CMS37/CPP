@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 05:28:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/13 05:28:58 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 22:41:14 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int	main(void)
 	b.takeDamage(a.getDamage());
 	b.beRepaired(5);
 	a.guardGate();
+
 	return (0);
 }

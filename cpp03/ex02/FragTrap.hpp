@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:54:27 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 16:54:27 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/19 22:44:17 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class FragTrap : public ClapTrap
 		FragTrap& operator=(const FragTrap &f);
 
 		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		void	highFivesGuys(void);
 };
