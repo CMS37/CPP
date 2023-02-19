@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:53:31 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/30 20:10:56 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/19 16:03:17 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include "Info.hpp"
 
-class PhoneBook {
+class PhoneBook 
+{
+	private:
+		Info	info[8];
 
-private:
-	Info	info[8];
-
-public:
-	void	setInfo();
-	void	serchInfo();
+	public:
+		void	setInfo(void);
+		void	serchInfo(void);
 };
 
 #endif

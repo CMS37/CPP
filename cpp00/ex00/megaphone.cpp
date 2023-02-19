@@ -6,12 +6,11 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:22:12 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/24 23:30:30 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/19 15:49:45 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 
 int main (int argc, char **argv)
 {

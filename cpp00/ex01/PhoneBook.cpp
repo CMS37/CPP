@@ -6,13 +6,14 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 07:05:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/01/31 00:11:18 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/19 15:57:55 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	PhoneBook::setInfo(void) {
+void	PhoneBook::setInfo(void) 
+{
 	static int	i = 0;
 	std::string firstName;
 	std::string	lastName;
@@ -69,7 +70,8 @@ void	printInfo(std::string str)
 	}
 }
 
-void	PhoneBook::serchInfo(void) {
+void	PhoneBook::serchInfo(void) 
+{
 	int	i;
 
 	if (this->info[0].getFirstName().empty())
