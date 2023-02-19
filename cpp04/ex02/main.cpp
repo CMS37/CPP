@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:08:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/14 17:08:04 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/20 00:30:05 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main(void)
 {
@@ -42,12 +39,12 @@ int main(void)
 	delete dog1;
 	delete dog2;
 	std::cout << "-------------------------------\n";
-	Dog *dog1 = new Dog;
-	Dog	*dog2 = new Dog;
+	Dog *dogA = new Dog;
+	Dog	*dogB = new Dog;
 	
-	*dog1 = *dog2;
-	delete dog1;
-	delete dog2;
+	*dogA = *dogB;
+	delete dogA;
+	delete dogB;
 	std::cout << "-------------------------------\n";
 	return (0);
 }

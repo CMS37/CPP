@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:19:37 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/19 23:17:24 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/20 00:25:02 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,24 @@ Cat::~Cat()
 Cat::Cat(const Cat &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = f;
+	_type = f.getType();
+	_brain = new Brain();
+	*(_brain) = *(f.getBrain());
 }
 
 Cat& Cat::operator=(const Cat &f)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &f)
+	{	
 		_type = f.getType();
+		if (_brain)
+		{
+			delete _brain;
+			_brain = new Brain();
+		}
+		*(_brain) = *(f.getBrain());
+	}
 	return (*this);
 }
 

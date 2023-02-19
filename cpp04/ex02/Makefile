@@ -6,7 +6,7 @@
 #    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/19 16:28:34 by min-cho          ###   ########.fr        #
+#    Updated: 2023/02/20 00:29:42 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ SRCS =	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp
+		Brain.cpp
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 

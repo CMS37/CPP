@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:08:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/19 23:13:33 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/20 00:23:58 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,17 @@ int main(void)
 	std::cout << "-------------------------------\n";
 	for (int i = 0;i < 4; i++)
 		delete animals[i];
-	std::cout << "-------------------------------\n";
+	std::cout << "--------------복사 생성자---------\n";
 	Dog *dog1 = new Dog;
 	Dog *dog2 = new Dog(*dog1);
 
-	std::cout << &dog1 << std::endl;
-	std::cout << &dog2 << std::endl;
 	delete dog1;
 	delete dog2;
-	std::cout << "-------------------------------\n";
+	std::cout << "-----------복사 대입 연산자---------\n";
 	Dog *dogA = new Dog;
 	Dog	*dogB = new Dog;
 	
 	*dogA = *dogB;
-	std::cout << &dogA << std::endl;
-	std::cout << &dogB << std::endl;
 	delete dogA;
 	delete dogB;
 	std::cout << "-------------------------------\n";
