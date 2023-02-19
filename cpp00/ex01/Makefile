@@ -6,24 +6,22 @@
 #    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 22:50:35 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/19 16:05:32 by min-cho          ###   ########.fr        #
+#    Updated: 2023/02/19 16:25:25 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	PhoneBook
+NAME		=	phonebook
 
 CXX			= 	clang++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
-SRCS_DIR	= .
 OBJS_DIR	= ./objs
 
-SRCS =	main.cpp \
-		PhoneBook.cpp \
-		Info.cpp
+SRCS = 	main.cpp \
+		Info.cpp \
+		PhoneBook.cpp
 		
-SRCS := ${addprefix ${SRCS_DIR}/, ${SRCS}}
-OBJS := ${SRCS:${SRCS_DIR}/%.cpp=${OBJS_DIR}/%.o}
+OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 
 all: ${NAME}
 
@@ -33,7 +31,7 @@ ${OBJS_DIR}:
 ${NAME}: ${OBJS}
 	@${CXX} -o ${NAME} ${OBJS}
 
-${OBJS_DIR}/%.o: ${SRCS_DIR}/%.cpp | ${OBJS_DIR}
+${OBJS_DIR}/%.o: %.cpp | ${OBJS_DIR}
 	@${CXX} ${CXXFLAGS} -g -c $< -o $@
 
 clean:

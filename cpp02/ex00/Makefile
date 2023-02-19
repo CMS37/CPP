@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
+#    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/06 05:05:13 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/02/19 16:27:19 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS_DIR	= ./objs
 SRCS =	main.cpp \
 		Fixed.cpp
 
-OBJS := ${SRCS:${SRCS_DIR}/%.cpp=${OBJS_DIR}/%.o}
+OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 
 all: ${NAME}
 
@@ -30,7 +30,7 @@ ${OBJS_DIR}:
 ${NAME}: ${OBJS}
 	@${CXX} -o ${NAME} ${OBJS}
 
-${OBJS_DIR}/%.o: ${SRCS_DIR}/%.cpp | ${OBJS_DIR}
+${OBJS_DIR}/%.o: %.cpp | ${OBJS_DIR}
 	@${CXX} ${CXXFLAGS} -g -c $< -o $@
 
 clean:
