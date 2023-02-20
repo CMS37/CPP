@@ -6,29 +6,22 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:56:32 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 06:39:07 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/20 09:04:44 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
 	try
 	{
-		Bureaucrat min("min", 1);
+		Bureaucrat min("min", 10);
 		std::cout << min << std::endl;
-		min.gradeUp();
-		std::cout << min << std::endl;
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat cho("cho", 151);
-		std::cout << cho << std::endl;
+		Form a("apple", 20, 10);
+		std::cout << a << std::endl;
+		a.beSigned(min);
+		std::cout << a << std::endl;
 	}
 	catch(std::exception& e)
 	{

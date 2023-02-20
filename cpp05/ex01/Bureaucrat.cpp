@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:59:00 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 06:38:05 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/20 08:33:10 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,15 @@ void	Bureaucrat::gradeDown(void)
 	_grade++;
 	if (_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(bool sign, std::string name)
+{
+	if (sign)
+		std::cout << _name << " signed " << name << std::endl;
+	else
+		std::cout << _name << " couldn’t sign " << name << " because " << 
+			_name << "'s grade is low then " << name << "'s grade\n";
 }
 
 

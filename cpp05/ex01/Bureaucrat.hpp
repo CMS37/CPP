@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:58:43 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 06:35:57 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/20 08:33:05 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Bureaucrat
 		int			getGrade(void) const;
 		void		gradeUp(void);
 		void		gradeDown(void);
+		void		signForm(bool sign, std::string name);
 
 
 		class GradeTooHighException : public std::exception

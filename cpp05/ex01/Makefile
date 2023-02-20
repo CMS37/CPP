@@ -6,23 +6,20 @@
 #    By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/19 16:28:47 by min-cho          ###   ########.fr        #
+#    Updated: 2023/02/20 08:13:55 by min-cho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	a.out
 
-CXX			= 	clang++
+CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		Animal.cpp \
-		Dog.cpp \
-		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 

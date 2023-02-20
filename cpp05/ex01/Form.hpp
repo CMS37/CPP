@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 20:58:43 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 06:35:57 by min-cho          ###   ########.fr       */
+/*   Created: 2023/02/20 06:44:25 by min-cho           #+#    #+#             */
+/*   Updated: 2023/02/20 09:02:51 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
-# include <iostream>
-# include <stdexcept>
+# include "Bureaucrat.hpp"
 
-class Bureaucrat
+class Form
 {
 	private:
 		std::string	_name;
-		int			_grade;
+		int			_gradeSign;
+		int			_gradeExe;
+		bool		_sign;
 
 	public:
-		Bureaucrat(std::string name, int grade);
-		~Bureaucrat();
-		Bureaucrat(const Bureaucrat &f);
-		Bureaucrat& operator=(const Bureaucrat &f);
+		Form(std::string name, int gradeSign, int gradeExe);
+		~Form();
+		Form(const Form &f);
+		Form& operator=(const Form &f);
 
+		void		beSigned(Bureaucrat &f);
 		std::string getName(void) const;
-		int			getGrade(void) const;
-		void		gradeUp(void);
-		void		gradeDown(void);
-
+		bool		getSign(void) const;
+		int			getGradeSign(void) const;
+		int			getGradeExe(void) const;
 
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw()
 				{
-					return ("Too high grade");
+					return ("Too high grade");	
 				}
 		};
 		
@@ -53,6 +54,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator<<(std::ostream &o, const Bureaucrat &f);
+std::ostream& operator<<(std::ostream &o, const Form &f);
 
 #endif
