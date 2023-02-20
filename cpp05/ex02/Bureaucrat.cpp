@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:59:00 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 09:07:00 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/20 13:49:51 by min-cho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,19 @@ void	Bureaucrat::signForm(bool sign, std::string name)
 	else
 		std::cout << _name << " couldn’t sign " << name << " because " << 
 			_name << "'s grade is low then " << name << "'s grade\n";
+}
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch(std::exception& e)
+	{
+		std::cout << "Fail execute Form" << std::endl;
+	}
 }
 
 
