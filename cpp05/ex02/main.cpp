@@ -12,16 +12,18 @@
 
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 int main(void)
 {
-	Bureaucrat min("min", 10);
-	Form	*tree = new ShrubberyCreationForm("test");
-	Form	*robo = new RobotomyRequestForm("test");
-	
-	tree->execute(min);
-	for (int i = 0; i < 5;i++)
-		robo->execute(min);
-	delete tree;
+	Bureaucrat				min("min", 10);
+	ShrubberyCreationForm	tree("test");
+	RobotomyRequestForm		robot("test");
+	PresidentialPardonForm	pardon("test");
+
+	min.executeForm(tree);
+	min.executeForm(robot);
+	min.executeForm(pardon);
 
 	return (0);
 }
