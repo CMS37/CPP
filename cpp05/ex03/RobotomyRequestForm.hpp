@@ -20,7 +20,7 @@ class RobotomyRequestForm : public Form
 {
 	private:
 		std::string _target;
-
+		RobotomyRequestForm();
 	public:
 		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm();

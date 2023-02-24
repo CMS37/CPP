@@ -22,6 +22,7 @@ class Form
 		int			_gradeSign;
 		int			_gradeExe;
 		bool		_sign;
+		Form();
 
 	public:
 		Form(std::string name, int gradeSign, int gradeExe);
