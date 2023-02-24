@@ -30,6 +30,7 @@ class Intern
 
 		Form		*makeForm(std::string form, std::string target);
 		std::string	getStr(int i) const;
+		int			hash(std::string form);
 };
 
 #endif

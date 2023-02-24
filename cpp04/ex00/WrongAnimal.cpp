@@ -12,7 +12,7 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal() : _type("noType")
 {
 	std::cout << "An WrongAnimal Appears" << std::endl;
 }

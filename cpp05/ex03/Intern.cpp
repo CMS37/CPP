@@ -37,24 +37,45 @@ Intern& Intern::operator=(const Intern &f)
 	return *this;
 }
 
-unsigned long hash(const std::string str)
+int Intern::hash(std::string form)
 {
-	return *str ? 55 : ( hash(str, h+1) *33) + (unsigned char)(str[h]);
+	int i;
+
+	while (i < 3)
+	{
+		if (_f[i] == form)
+			return (i);
+		i++;
+	}
+	return (i);
 }
+
 
 Form	*Intern::makeForm(std::string form, std::string target)
 {
-	const std::string& str = form;
+	std::cout << "Intern trying...\n";
+	Form	*_form;
 
-	switch(hash(str))
+	switch(hash(form))
 	{
-		case :
-
+		case 1:
+			_form = new ShrubberyCreationForm(target);
+			std::cout << "Completed the ShrubberyCreationForm\n";
+			break;
+		case 2:
+			_form = new RobotomyRequestForm(target);
+			std::cout << "Completed the RobotomyRequestForm\n";
+			break;
+		case 3:
+			_form = new PresidentialPardonForm(target);
+			std::cout << "Completed the PresidentialPardonForm\n";
+			break;
 		default:
-
+			_form = NULL;
+			std::cout << "Intern doesn't know this form...\n";
+			break;
 	}
-
-	return (0);
+	return (_form);
 }
 
 std::string Intern::getStr(int i) const

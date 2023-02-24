@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	_type = "Cat";
 	std::cout << "A Wild Cat Appears" << std::endl;
@@ -40,9 +40,4 @@ Cat& Cat::operator=(const Cat &f)
 void	Cat::makeSound(void) const
 {
 	std::cout << "Meowwwww" << std::endl;
-}
-
-std::string Cat::getType(void) const
-{
-	return (_type);
 }

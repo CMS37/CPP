@@ -32,5 +32,13 @@ int main(void)
 	cho.executeForm(*robot);
 	cho.executeForm(*pardon);
 	cho.executeForm(*wrong);
+
+	delete tree;
+	delete robot;
+	delete pardon;
+	delete wrong;
+
+	//leaks
+	//system("leaks a.out");
 	return (0);
 }

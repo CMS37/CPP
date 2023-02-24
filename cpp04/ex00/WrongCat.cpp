@@ -12,7 +12,7 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat()
+WrongCat::WrongCat() : WrongAnimal()
 {
 	_type = "WrongCat";
 	std::cout << "A Wild WrongCat Appears" << std::endl;
@@ -40,9 +40,4 @@ WrongCat& WrongCat::operator=(const WrongCat &f)
 void	WrongCat::makeSound(void) const
 { 
 	std::cout << "Wrong Cat called" << std::endl;
-}
-
-std::string WrongCat::getType(void) const
-{
-	return (_type);
 }

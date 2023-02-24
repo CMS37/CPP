@@ -12,7 +12,7 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
 	_type = "Dog";
 	std::cout << "A Wild Dog Appears" << std::endl;
@@ -40,9 +40,4 @@ Dog& Dog::operator=(const Dog &f)
 void	Dog::makeSound(void) const
 {
 	std::cout << "Wal! Wal!" << std::endl;
-}
-
-std::string	Dog::getType(void) const
-{
-	return (_type);
 }

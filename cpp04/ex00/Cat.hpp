@@ -24,7 +24,6 @@ class Cat : public Animal
 		Cat&	operator=(const Cat &f);
 
 		void		makeSound(void) const;
-		std::string	getType(void) const;
 };
 
 #endif

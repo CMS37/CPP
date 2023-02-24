@@ -27,7 +27,7 @@ class Animal
 		Animal&	operator=(const Animal &f);
 
 		virtual void		makeSound(void) const;
-		virtual std::string	getType(void) const;
+		std::string	getType(void) const;
 		virtual Brain		*getBrain(void) const = 0;
 };
 

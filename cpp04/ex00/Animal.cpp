@@ -12,7 +12,7 @@
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : _type("noType")
 {
 	std::cout << "An animal Appears" << std::endl;
 }
