@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:59:00 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 13:49:51 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/25 18:22:45 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ void	Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{
-		form.execute(*this);
 		std::cout << _name << " executed " << form.getName() << std::endl;
+		form.execute(*this);
 	}
 	catch(std::exception& e)
 	{

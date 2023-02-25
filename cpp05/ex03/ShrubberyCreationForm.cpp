@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:01:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 14:02:01 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/25 18:40:58 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::ofstream fout(_target + "_shruberry");
 		if (fout.is_open())
 		{
-			fout << " tree \n tree \n tree rererererrere\n 트리그리기귀찮다...\n";
+			fout << "           (대충 트리였던것)\n         (대충 트리였던것)(대충 트리였던것)\n(대충 트리였던것)(대충 트리였던것)(대충 트리였던것)\n";
 			fout.close();
 		}
 	}

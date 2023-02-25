@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:06:38 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/21 15:06:38 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/25 18:18:48 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,15 @@ Intern& Intern::operator=(const Intern &f)
 int Intern::hash(std::string form)
 {
 	int i;
-
+	
+	i = 0;
 	while (i < 3)
 	{
 		if (_f[i] == form)
-			return (i);
+			return (i + 1);
 		i++;
 	}
-	return (i);
+	return (i + 1);
 }
 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:08:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 00:23:58 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/25 17:46:11 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(void)
 {
 	const Animal *animals[4];
-
+//	const Animal a = new Animal(); 추상메소드가 하나이상 포함되면 생성 불가예시
 	for(int i = 0; i < 4; i++)
 	{
 		if (i < 2)
