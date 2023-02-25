@@ -6,7 +6,7 @@
 #    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/25 20:32:14 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/02/25 22:00:04 by min-cho          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,11 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
 
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
