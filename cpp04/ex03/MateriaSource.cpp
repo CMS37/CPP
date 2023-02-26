@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:31:30 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/26 11:41:21 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/26 14:56:35 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ MateriaSource::~MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &f)
 {
+	for (int i = 0; i < 4; i++)
+		_slot[i] = NULL;
 	*this = f;
 }
 
@@ -35,9 +37,12 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &f)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (_slot[i])
+			if (_slot[i] != NULL)
+			{
 				delete _slot[i];
-			_slot[i] = f._slot[i];
+				_slot[i] = NULL;
+			}
+			_slot[i] = f._slot[i]->clone();
 		}
 	}
 	return (*this);

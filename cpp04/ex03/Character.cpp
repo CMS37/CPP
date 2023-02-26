@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:28:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/26 11:15:35 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/26 15:13:25 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,29 @@ Character::~Character()
 
 Character::Character(const Character &f)
 {
+	for(int i = 0;i < 4;i++)
+		_bag[i] = NULL;
 	*this = f;
 }
 
 Character& Character::operator=(const Character &f)
 {
 	if (this != &f)
+	{
 		_name = f.getName();
+		for(int i = 0; i < 4; i++)
+		{
+			if (_bag[i] != NULL)
+			{
+				delete _bag[i];
+				_bag[i] = NULL;
+			}
+			if (f._bag[i] != NULL)
+				_bag[i] = f._bag[i]->clone();
+			else
+				_bag[i] = NULL;
+		}
+	}
 	return (*this);
 }
 
