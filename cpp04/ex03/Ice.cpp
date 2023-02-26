@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 20:54:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/25 21:08:21 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/26 11:10:59 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ Ice::Ice() : AMateria("ice")
 {
 
 }
-
-Ice::~Ice() {}
 
 Ice::Ice(const Ice &f)
 {

@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:18:58 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/25 22:04:59 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/26 11:31:19 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ class Character : public ICharacter
 {
 	private:
 		std::string	_name;
+		AMateria	*_bag[4];
+		Character() {};
 
 	public:
-		Character();
 		Character(std::string name);
 		~Character();
 		Character(const Character &f);

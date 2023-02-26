@@ -6,18 +6,16 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:02:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/25 21:12:51 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/26 11:10:08 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
 
 }
-
-Cure::~Cure() {}
 
 Cure::Cure(const Cure &f)
 {
@@ -31,7 +29,7 @@ Cure& Cure::operator=(const Cure &f)
 	return (*this);
 }
 
-AMateria*	Cure::clone()
+AMateria*	Cure::clone() const
 {
 	return (new Cure(*this));	
 }
