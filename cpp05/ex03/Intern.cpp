@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:06:38 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/25 18:18:48 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/27 17:20:44 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,28 +55,21 @@ int Intern::hash(std::string form)
 Form	*Intern::makeForm(std::string form, std::string target)
 {
 	std::cout << "Intern trying...\n";
-	Form	*_form;
-
 	switch(hash(form))
 	{
 		case 1:
-			_form = new ShrubberyCreationForm(target);
-			std::cout << "Completed the ShrubberyCreationForm\n";
-			break;
+			std::cout << "Intern make ShrubberyCreationForm!\n";
+			return (new ShrubberyCreationForm(target));
 		case 2:
-			_form = new RobotomyRequestForm(target);
-			std::cout << "Completed the RobotomyRequestForm\n";
-			break;
+			std::cout << "Intern make RobotomyRequestForm!\n";
+			return (new RobotomyRequestForm(target));
 		case 3:
-			_form = new PresidentialPardonForm(target);
-			std::cout << "Completed the PresidentialPardonForm\n";
-			break;
+			std::cout << "Intern make PresidentialPardonForm!\n";
+			return (new PresidentialPardonForm(target));
 		default:
-			_form = NULL;
 			std::cout << "Intern doesn't know this form...\n";
-			break;
+			return (NULL);
 	}
-	return (_form);
 }
 
 std::string Intern::getStr(int i) const

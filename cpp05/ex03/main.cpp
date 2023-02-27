@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:42:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/25 18:24:28 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/27 17:27:35 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main(void)
 {
 	Intern		min;
-	Bureaucrat	cho("cho", 22);
+	Bureaucrat	cho("cho", 20);
 	Form		*tree;	
 	Form		*robot;
 	Form		*pardon;
@@ -28,16 +28,9 @@ int main(void)
 	pardon =min.makeForm("presidential pardon", "test2");
 	wrong = min.makeForm("Wrong request", "test3");
 
-	try
-	{	
-		cho.executeForm(*tree);
-		cho.executeForm(*robot);
-		cho.executeForm(*pardon);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	cho.executeForm(*tree);
+	cho.executeForm(*robot);
+	cho.executeForm(*pardon);
 
 	delete tree;
 	delete robot;
