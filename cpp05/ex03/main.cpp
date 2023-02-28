@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:42:56 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/21 16:42:56 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/02/27 17:27:35 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,24 @@
 int main(void)
 {
 	Intern		min;
-	Bureaucrat	cho("cho", 10);
+	Bureaucrat	cho("cho", 20);
 	Form		*tree;	
 	Form		*robot;
 	Form		*pardon;
 	Form		*wrong;
 
-	tree = min.makeForm("shrubbery creation request", "test");
-	robot = min.makeForm("robotomy request", "test");
-	pardon =min.makeForm("presidential pardon request", "test");
-	wrong = min.makeForm("Wrong request", "test");
+	tree = min.makeForm("shrubbery creation", "test");
+	robot = min.makeForm("robotomy request", "test1");
+	pardon =min.makeForm("presidential pardon", "test2");
+	wrong = min.makeForm("Wrong request", "test3");
 
 	cho.executeForm(*tree);
 	cho.executeForm(*robot);
 	cho.executeForm(*pardon);
-	cho.executeForm(*wrong);
 
 	delete tree;
 	delete robot;
 	delete pardon;
-	delete wrong;
 
 	//leaks
 	//system("leaks a.out");

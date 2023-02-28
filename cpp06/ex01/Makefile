@@ -6,24 +6,18 @@
 #    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/25 18:15:09 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/02/28 09:16:47 by min-cho          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	a.out
+NAME		=	convert
 
 CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs
 
-SRCS =	main.cpp \
-		Bureaucrat.cpp \
-		Form.cpp \
-		ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp \
-		Intern.cpp
+SRCS =	main.cpp
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 

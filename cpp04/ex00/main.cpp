@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:08:04 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/19 22:58:40 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/25 17:42:20 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int main(void)
 	delete j;
 	delete i;
 	delete meta;
-	//실패 예시 (가상함수선언을안하면 부모함수가 실행됨)
+
+	std::cout << "--------Wrong Case------------------\n";
 	const WrongAnimal* cat = new WrongCat();
 	std::cout << cat->getType() << " " << std::endl;
 	std::cout << "CAT : ";
 	cat->makeSound();
 
-	//해재할떄도 자식클래스는 소멸자호출x = 누수발생원인
 	delete cat;
 
 	return (0);

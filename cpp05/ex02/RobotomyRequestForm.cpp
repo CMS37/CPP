@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:00:25 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/20 14:14:44 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/02/27 17:34:20 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw RobotomyRequestForm::GradeTooLowException();
 	else
 	{
+		int i;
+
+		srand(time(NULL));
+		i = rand();
 		std::cout << "Drrrrrr.....\n";
-		int i = rand();
-		
 		if (i % 2 == 0)
 			std::cout << _target << " Robot Evolution Successful!!\n";
 		else
