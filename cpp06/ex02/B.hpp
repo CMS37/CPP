@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 17:48:52 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 17:48:52 by marvin           ###   ########seoul.kr  */
+/*   Created: 2023/03/05 17:52:46 by marvin            #+#    #+#             */
+/*   Updated: 2023/03/05 17:52:46 by marvin           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef B_HPP
+# define B_HPP
 
-int main(void)
+# include "Base.hpp"
+
+class B : public Base
 {
-	Base *ptr = Base::generate();
 
-	Base::identify(*ptr);
-	Base::identify(ptr);
+};
 
-	delete ptr;
-
-	return (0);
-}
+#endif

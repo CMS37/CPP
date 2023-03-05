@@ -18,12 +18,11 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		Bureaucrat.cpp \
-		Form.cpp \
-		ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp \
-		Intern.cpp
+		Base.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp
+		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 

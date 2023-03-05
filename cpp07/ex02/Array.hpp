@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 17:48:52 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 17:48:52 by marvin           ###   ########seoul.kr  */
+/*   Created: 2023/03/05 19:00:57 by marvin            #+#    #+#             */
+/*   Updated: 2023/03/05 19:00:57 by marvin           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
-int main(void)
+# include <iostream>
+
+template <typename T>
+class Array
 {
-	Base *ptr = Base::generate();
+	private:
+		T				*_arr;
+		unsigned int	_len;
 
-	Base::identify(*ptr);
-	Base::identify(ptr);
+	public:
+		Array();
+		Array(unsigned int n);
+		~Array();
+		Array(const Array<T> &f);
+		Array& operator=(const Array<T> &f);
 
-	delete ptr;
+		T&	operator[](unsigned int n);
+		class IndexError : public std::exception
+		{
+			public:
+				const char* what(void) const throw()
+		};
+};
 
-	return (0);
-}
+#endif

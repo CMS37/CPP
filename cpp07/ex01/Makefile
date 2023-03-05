@@ -17,9 +17,8 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs
 
-SRCS =	main.cpp \
-		Data.cpp \
-		Serializer.cpp
+SRCS =	main.cpp
+		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 

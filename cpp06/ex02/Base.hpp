@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 17:48:52 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 17:48:52 by marvin           ###   ########seoul.kr  */
+/*   Created: 2023/03/05 17:49:22 by marvin            #+#    #+#             */
+/*   Updated: 2023/03/05 17:49:22 by marvin           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(void)
+# include <iostream>
+# include "A.hpp"
+# include "B.hpp"
+# include "C.hpp"
+
+class Base
 {
-	Base *ptr = Base::generate();
+	public:
+		virtual ~Base();
 
-	Base::identify(*ptr);
-	Base::identify(ptr);
+		static Base*	generate(void);
+		static void		identify(Base *p);
+		static void		identify(Base &p);
+};
 
-	delete ptr;
-
-	return (0);
-}
+#endif
