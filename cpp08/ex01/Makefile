@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	a.out
+NAME		=	ex01
 
 CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
@@ -18,7 +18,7 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		Array.tpp
+		Span.cpp
 		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
