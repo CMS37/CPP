@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:49:22 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 17:49:22 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/07 16:05:26 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Base
 {
 	public:
-		virtual ~Base();
+		virtual ~Base() {}
 
 		static Base*	generate(void);
 		static void		identify(Base *p);

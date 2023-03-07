@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:58:22 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/28 18:58:22 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/07 15:58:31 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ ScalarConverter::ScalarConverter(const ScalarConverter &f)
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter &f)
 {
 	if (this != &f)
+	{
+		
+	}
 	return (*this);
 }
 
@@ -38,11 +41,11 @@ void	printErr(void)
 
 void	checkStr(char *str, char c)
 {
-	for(int i = 0; i < strlen(str); i++)
+	for(size_t i = 0; i < strlen(str); i++)
 	{
 		if(str[i] == c)
 		{
-			for(int j = i + 1;j < strlen(str); j++)
+			for(size_t j = i + 1;j < strlen(str); j++)
 			{
 				if(str[j] == c)
 					printErr();
@@ -79,7 +82,7 @@ void	ScalarConverter::parsing(char *str)
 	}
 	checkStr(str, '.');
 	checkStr(str, 'f');
-	for(int i = 0; i < strlen(str); i++)
+	for(size_t i = 0; i < strlen(str); i++)
 	{
 		if (!isdigit(str[i]) && !(str[i] == '.' || str[i] == 'f'))
 			printErr();

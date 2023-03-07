@@ -6,7 +6,7 @@
 #    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/02/25 18:15:09 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/03/07 16:02:44 by min-cho          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,6 @@ OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
 		Base.cpp \
-		A.cpp \
-		B.cpp \
-		C.cpp
 		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}

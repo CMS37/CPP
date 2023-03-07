@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:49:12 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 17:49:12 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/07 16:07:24 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	Base::identify(Base *p)
 
 void	Base::identify(Base &p)
 {
+	// bool error
 	if (dynamic_cast<A&>(p))
 		std::cout << "A\n";
 	else if (dynamic_cast<B&>(p))
