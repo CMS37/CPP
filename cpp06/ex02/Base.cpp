@@ -12,7 +12,7 @@
 
 #include "Base.hpp"
 
-Base*	Base::generate(void)
+Base*	generate(void)
 {
 	srand(time(NULL));
 	switch(rand() % 3)
@@ -24,38 +24,44 @@ Base*	Base::generate(void)
 	}
 }
 
-void	Base::identify(Base *p)
+void	identify(Base *p)
 {
-	if (dynamic_cast<A*>(p))
+	A *a = dynamic_cast<A*>(p);
+	B *b = dynamic_cast<B*>(p);
+	C *c = dynamic_cast<C*>(p);
+	if (a)
 		std::cout << "A\n";
-	else if (dynamic_cast<B*>(p))
+	else if (b)
 		std::cout << "B\n";
-	else if (dynamic_cast<C*>(p))
+	else if (c)
 		std::cout << "C\n";
 }
 
-void	Base::identify(Base &p)
+void	identify(Base &p)
 {
 	try
 	{
-		dynamic_cast<A&>(p);
+		A a = dynamic_cast<A&>(p);
 		std::cout << "A\n";
+		return ;
 	}
 	catch(...)
 	{
 	}
 	try
 	{
-		dynamic_cast<B&>(p);
+		B  b = dynamic_cast<B&>(p);
 		std::cout << "B\n";
+		return ;
 	}
 	catch(...)
 	{
 	}
 	try
 	{
-		dynamic_cast<C&>(p);
+		C c = dynamic_cast<C&>(p);
 		std::cout << "C\n";
+		return ;
 	}
 	catch(...)
 	{

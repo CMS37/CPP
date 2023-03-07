@@ -14,10 +14,10 @@
 
 int main(void)
 {
-	Base *ptr = Base::generate();
+	Base *ptr = generate();
 
-	Base::identify(*ptr);
-	Base::identify(ptr);
+	identify(*ptr);
+	identify(ptr);
 
 	delete ptr;
 

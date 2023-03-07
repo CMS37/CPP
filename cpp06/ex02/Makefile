@@ -18,7 +18,7 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		Base.cpp \
+		Base.cpp
 		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
