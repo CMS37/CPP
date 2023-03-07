@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:49:12 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/07 16:07:24 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/03/07 16:44:40 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,32 @@ void	Base::identify(Base *p)
 		std::cout << "B\n";
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C\n";
-	else
-		std::cout << "ERROR! NON TYPE!\n";
 }
 
 void	Base::identify(Base &p)
 {
-	// bool error
-	if (dynamic_cast<A&>(p))
+	try
+	{
+		dynamic_cast<A&>(p);
 		std::cout << "A\n";
-	else if (dynamic_cast<B&>(p))
+	}
+	catch(...)
+	{
+	}
+	try
+	{
+		dynamic_cast<B&>(p);
 		std::cout << "B\n";
-	else if (dynamic_cast<C&>(p))
+	}
+	catch(...)
+	{
+	}
+	try
+	{
+		dynamic_cast<C&>(p);
 		std::cout << "C\n";
-	else
-		std::cout << "ERROR! NON TYPE!\n";
+	}
+	catch(...)
+	{
+	}
 }
