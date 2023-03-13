@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:00:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 19:00:46 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/13 21:58:46 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,20 @@ Array<T>::Array(unsigned int n)
 template <typename T>
 Array<T>::~Array()
 {
+	_len = 0;
 	delete[] _arr;
 }
 
 template <typename T>
-Array<T>::Array(cosnt Array<T> &f)
+Array<T>::Array(const Array<T> &f)
 {
 	_len = f._len;
 	_arr = new T[_len];
-	for(int i = 0; i < _len; i++)
+	for(unsigned int i = 0; i < _len; i++)
 		_arr[i] = f[i];
 }
 
-template <typenmae T>
+template <typename T>
 Array<T>& Array<T>::operator=(const Array<T> &f)
 {
 	if (this != &f)
@@ -50,21 +51,22 @@ Array<T>& Array<T>::operator=(const Array<T> &f)
 		if (_arr != NULL)
 			delete [] _arr;
 		_arr = new T[_len];
-		for(int i = 0; i < _len; i++)
+		for(unsigned int i = 0; i < _len; i++)
 			_arr[i] = f[i];
 	}
 	return (*this);
 }
 
-template <typenmae T>
-T&	Array<T>::operator[](unsigned int n)
+template <typename T>
+T&	Array<T>::operator[](unsigned int n) const
 {
 	if (_len <= n)
-		throw exception();
-	return (_arr[i]);
+		throw IndexError();
+	return (_arr[n]);
 }
 
-const char* IndexError::what(void) const throw()
+template <typename T>
+const char* Array<T>::IndexError::what(void) const throw()
 {
 	return ("Over Index!");
 }

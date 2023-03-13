@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Templates.hpp                                      :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 18:31:32 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 18:31:32 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/13 20:33:52 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	swap(T& a, T& b)
 template <typename T>
 T min(T& a, T& b)
 {
-	if (a = b)
+	if (a == b)
 		return (b);
 	else if (a > b)
 		return (b);
@@ -38,7 +38,7 @@ T min(T& a, T& b)
 template <typename T>
 T max(T& a, T& b)
 {
-	if (a = b)
+	if (a == b)
 		return (b);
 	else if (a > b)
 		return (a);
