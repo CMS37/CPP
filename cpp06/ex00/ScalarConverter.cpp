@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:58:22 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/07 15:58:31 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/03/13 19:22:28 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,32 @@ void	printErr(void)
 	exit(1);
 }
 
-void	checkStr(char *str, char c)
+int	checkStr(char *str, char c)
 {
+	int cnt = 0;
+
 	for(size_t i = 0; i < strlen(str); i++)
 	{
 		if(str[i] == c)
 		{
+			cnt++;
 			for(size_t j = i + 1;j < strlen(str); j++)
 			{
 				if(str[j] == c)
 					printErr();
 			}
+			if (c == '.' && (str[i + 1] == '\0' || str[i + 1] == 'f'))
+				printErr();
 		}
 	}
+	return (cnt);
 }
 
 void	ScalarConverter::parsing(char *str)
 {
+	int fcnt = 0;
+	int cnt = 0;
+
 	if (!strcmp(str, "nanf") || !strcmp(str, "nan"))
 	{
 		std::cout << "char: impossible" << std::endl;
@@ -80,8 +89,13 @@ void	ScalarConverter::parsing(char *str)
 		std::cout << "double: -inf" << std::endl;
 		exit (0);
 	}
-	checkStr(str, '.');
-	checkStr(str, 'f');
+	cnt = checkStr(str, '.');
+	fcnt = checkStr(str, 'f');
+	if (fcnt == 1)
+	{
+		if (cnt != 1)
+			printErr();
+	}
 	for(size_t i = 0; i < strlen(str); i++)
 	{
 		if (!isdigit(str[i]) && !(str[i] == '.' || str[i] == 'f'))

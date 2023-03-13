@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:43:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/02/28 18:43:04 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/13 19:34:39 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,9 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-// inf(양의 무한대) -inf(음의 무한대), nan(숫자아님)
-//리터널 : 코드에 직접삽입된 값(상수)
+/*
+00 = static_cast(형변환 캐스트)
+01 = reinterpret_cast(포인터타입 변환 캐스트)
+02 = dynamic_cast(안전한 다운 캐스트)
+const_cast(const제거? 캐스트)
+*/

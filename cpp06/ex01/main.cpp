@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 04:04:58 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 04:04:58 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/03/13 19:30:26 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void)
 {
+
 	Data data(42);
 
 	uintptr_t p1 = Serializer::serialize(&data);
@@ -27,9 +28,15 @@ int main(void)
 	/*
 	int a = 42;
 
-	uintptr_t p1 = reinterpret_cast<uintptr_t>(a);
-	int *b =  reinterpret_cast<uintptr_t>(p1);
+	uintptr_t p1 = reinterpret_cast<uintptr_t>(&a);
+	uintptr_t p2 = (uintptr_t)(&a);
+	int *b =  reinterpret_cast<int*>(p1);
 
-	std::cout << &b << std::endl;
+	std::cout << &a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << "-------------------------\n";
+	std::cout << p1 << std::endl;
+	std::cout << p2 << std::endl;
+	std::cout << (uintptr_t)b << std::endl;
 	*/
 }

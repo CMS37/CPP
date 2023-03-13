@@ -6,7 +6,7 @@
 #    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 05:05:13 by min-cho           #+#    #+#              #
-#    Updated: 2023/03/07 16:02:44 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/03/13 19:38:10 by min-cho          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		Base.cpp
+		Base.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp
 		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}

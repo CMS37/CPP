@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:52:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/07 16:05:40 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/03/13 19:37:56 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "Base.hpp"
 
-class C : public Base {};
+class C : public Base
+{
+
+};
 
 #endif
