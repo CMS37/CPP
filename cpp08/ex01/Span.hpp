@@ -36,8 +36,7 @@ class Span
 		void	addNumber(int num);
 		int		shortestSpan(void);
 		int		longestSpan(void);
-		void	addRange(std::vector<int>::iterator begin,
-							std::vector<int>::iterator end, int size);
+		void	addspan(std::vector<int> src);
 
 		class SpanFull : public std::exception
 		{

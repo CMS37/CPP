@@ -84,11 +84,11 @@ int main()
 		vec.push_back(11);
 		vec.push_back(12);
 		vec.push_back(421);
+		sp3.addspan(vec);
 		for (std::vector<int>::iterator iter = vec.begin(); iter != vec.end(); ++iter)
 		{
 			std::cout << *iter << std::endl;
 		}
-		sp3.addRange(vec.begin(), vec.end(), vec.size());
 	}
 	std::cout << "---------------------------------------------\n";
 	return (0);
