@@ -15,12 +15,8 @@
 
 # include <iostream>
 # include <fstream>
-# include <map>
 # include <string>
-# include <list>
-# include <cstdlib>
-# include <sstream>
-# include <iomanip>
+# include <map>
 
 # define BAD_INPUT 10
 # define NOT_POS 11
@@ -29,12 +25,18 @@
 class BitcoinExchange
 {
 	private:
-
-	public:
+		std::map<std::string, double> _map;
 		BitcoinExchange();
+	public:
+		BitcoinExchange(std::string path);
 		~BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &f);
+		BitcoinExchange& operator=(const BitcoinExchange &f);
 
-		void run(std::string file);
+		void	run(std::string input);
+		void	print_val(std::string line);
+
+		std::map<std::string, double> getMap(void) const;
 };
 
 #endif
