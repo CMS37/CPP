@@ -17,8 +17,8 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs
 
-SRCS =	main.cpp
-		
+SRCS =	main.cpp \
+		BitcoitExchange.cpp
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 
