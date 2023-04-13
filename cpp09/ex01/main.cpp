@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 18:49:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/13 20:41:26 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/04/14 04:09:22 by min-cho           #+#    #+#             */
+/*   Updated: 2023/04/14 04:09:22 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
-
-# include <iostream>
-
-template <typename T>
-void iter(T *t, int len, void (*f)(T &a))
+int	main(int argc, char** argv)
 {
-	for(int i = 0; i < len; i++)
-		(*f)(t[i]);
+	if (argc != 2)
+	{
+		std::cout << "Error: program should only 1 argument\n";
+		return (0);
+	}
+	RPN rpn;
+	rpn.execute_operation(argv[1]);
+	return (0);
 }
-
-template <typename T>
-void	test(T &a)
-{
-	std::cout << a << std::endl;
-}
-
-#endif

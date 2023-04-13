@@ -52,11 +52,11 @@ int main(void)
 		Array<int> arr1(3);
 		for (int i = 0;i < 3; i++)
 		{
-			arr1[i] = i;
+			arr1[i] = i + 1;
 			std::cout << "arr1 : " << arr1[i] << std::endl; 
 		}
-		
 		Array<int> arr2(arr1);
+		arr1[0] = 42;
 		for (int i = 0;i < 3; i++)
 		{
 			std::cout << "arr2 : " << arr2[i] << std::endl;
