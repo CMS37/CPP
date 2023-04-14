@@ -10,14 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ex01
+NAME		=	RPN
 
 CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs
 
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		RPN.cpp
 		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}

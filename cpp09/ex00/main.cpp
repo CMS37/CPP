@@ -18,7 +18,10 @@ int main(int ac, char **av)
 	BitcoinExchange btc(path);
 
 	if (ac != 2)
-		std::cout << "Error: could not open file.\n";	
+	{
+		std::cout << "Error: could not open file.\n";
+		return (0);
+	}
 	btc.run(av[1]);
 	return (0);
 }

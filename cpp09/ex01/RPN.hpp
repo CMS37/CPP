@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 04:09:22 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/14 04:09:22 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/04/15 03:04:40 by min-cho           #+#    #+#             */
+/*   Updated: 2023/04/15 03:04:40 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#ifndef RPN_HPP
+# define RPN_HPP
 
-int main(int ac, char **av)
+# include <iostream>
+# include <stack>
+# include <string>
+
+class RPN
 {
-	RPN rpn;
+	private:
+		std::stack<int> _s;
 
-	if (ac != 2)
-	{
-		std::cout << "Error: Input data\n";
-		return (0);
-	}
-	rpn.calculate(av[1]);
-	return (0);
-}
+	public:
+		RPN();
+		~RPN();
+		RPN(const RPN &f);
+		RPN& operator=(const RPN &f);
 
+		std::stack<int>	getStack(void) const;
 
+		void	calculate(std::string str);
+};
 
-// int	main(int argc, char** argv)
-// {
-// 	if (argc != 2)
-// 	{
-// 		std::cout << "Error: program should only 1 argument\n";
-// 		return (0);
-// 	}
-// 	RPN rpn;
-// 	rpn.execute_operation(argv[1]);
-// 	return (0);
-// }
+#endif
