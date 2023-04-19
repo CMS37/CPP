@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 00:12:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/10 00:12:04 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 08:42:43 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ class MutantStack : public std::stack<T>
 		}
 		MutantStack& operator=(const MutantStack &f)
 		{
-			if(this != f)
-			{
-
-			}
-			return (*this);
+			*this = f;
 		}
 		
 		iterator begin(void)

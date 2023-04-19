@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 00:11:23 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/10 00:11:23 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 08:55:30 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 int main(void)
 {
+	std::cout << "---------Stack---------\n";
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -34,6 +36,21 @@ int main(void)
 	std::cout << *it << std::endl;
 	++it;
 	}
-	std::stack<int> s(mstack);
+	std::cout << "---------list---------\n";
+	std::list<int> lst;
+	lst.push_back(5);
+	lst.push_back(17);
+	std::cout << lst.back() << std::endl;
+	lst.pop_back();
+	std::cout << lst.size() << std::endl;
+	lst.push_back(3);
+	lst.push_back(5);
+	lst.push_back(737);
+	lst.push_back(0);
+	std::list<int>::iterator iter = lst.begin();
+	for (; iter != lst.end(); ++iter)
+	{
+		std::cout << *iter << std::endl;
+	}
 	return (0);
 }
