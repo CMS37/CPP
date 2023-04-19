@@ -6,25 +6,38 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 22:18:19 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/13 22:47:30 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 08:21:05 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
-#include <iostream>
+# include <iostream>
+# include <vector>
+# include <list>
+
+class NoFind : public std::exception
+{
+	public:
+		const char * what(void) const throw()
+		{
+			return ("No Find!");
+		}
+};
+
 
 template <typename T>
-void	easyFind(T &con, int i)
+int	easyFind(T &con, int i)
 {
-	typename T::iterator iter;
+	typename T::iterator iter = con.begin();
 
-	iter = std::find(con.begin(), con.end(), i);
-	if (iter == con.end())
-		std::cout << "Can't find in this container\n";
-	else
-		std::cout << "Find! '" << *iter << "' is in container\n";
+	for(;iter != con.end(); ++iter)
+	{
+		if (*iter == i)
+			return (*iter);
+	}
+	throw NoFind();
 }
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:38:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/05 23:38:13 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 08:36:46 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		Span::shortestSpan(void)
 	unsigned int	res = UINT_MAX;
 	std::vector<int> dest;
 
-	if(_size <= 1)
+	if(_vec.size() <= 1)
 		throw EmptySpan();
 	dest.assign(_vec.begin(),_vec.end());
 	sort(dest.begin(), dest.end());
@@ -72,11 +72,10 @@ int		Span::shortestSpan(void)
 
 int		Span::longestSpan(void)
 {
-	unsigned int	tmp = 0;
 	unsigned int	res = 0;
 	std::vector<int> dest;
 
-	if(_size <= 1)
+	if(_vec.size() <= 1)
 		throw EmptySpan();
 	dest.assign(_vec.begin(),_vec.end());
 	sort(dest.begin(), dest.end());
@@ -86,7 +85,7 @@ int		Span::longestSpan(void)
 
 void	Span::addspan(std::vector<int> src)
 {
-	if (src.size() + _vec.size() >= _size)
+	if (src.size() + _vec.size() > _size)
 		throw SpanFull();
 	_vec.insert(_vec.end(), src.begin(), src.end());
 }

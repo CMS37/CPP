@@ -6,13 +6,11 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 22:09:31 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/13 22:48:05 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 08:20:49 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-#include <vector>
-#include <list>
 
 int main(void)
 {
@@ -23,13 +21,16 @@ int main(void)
 		vec.push_back(2);
 		vec.push_back(5);
 		vec.push_back(3);
-		// for (std::vector<int>::iterator iter = vec.begin(); iter != vec.end(); ++iter)
-		// {
-		// 	std::cout << *iter << std::endl;
-		// }
-		easyFind(vec, 5);
-		easyFind(vec, 3);
-		easyFind(vec, 10);
+		try
+		{
+			std::cout << easyFind(vec, 5) << std::endl;
+			std::cout << easyFind(vec, 3) << std::endl;
+			std::cout << easyFind(vec, 10) << std::endl;
+		}
+		catch(std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 	{
 		std::cout << "--------------------list--------------------\n";
@@ -38,13 +39,15 @@ int main(void)
 		lst.push_back(2);
 		lst.push_back(5);
 		lst.push_back(3);
-		// for (std::list<int>::iterator iter = lst.begin(); iter != lst.end(); ++iter)
-		// {
-		// 	std::cout << *iter << std::endl;
-		// }
-		easyFind(lst, 2);
-		easyFind(lst, 1);
-		easyFind(lst, 10);
-	}
-	
+		try
+		{
+			std::cout << easyFind(lst, 2) << std::endl;
+			std::cout << easyFind(lst, 1) << std::endl;
+			std::cout << easyFind(lst, 10) << std::endl;
+		}
+		catch(std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}	
 }
