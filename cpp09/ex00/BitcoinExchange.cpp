@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:35:01 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/13 20:35:01 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/19 18:37:31 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ BitcoinExchange::BitcoinExchange(std::string path)
 				std::cout << "Data file error\n";
 				exit(0);
 			}
-			date = line.substr(0, index - 1);
-			btc = std::atof(line.substr(index + 1).c_str());
-			_map.insert({date, btc});
+			date = line.substr(0, index);
+			btc = std::atof(line.substr(index + 2).c_str());
+			_map.insert(std::make_pair(date, btc));
 		}
 	}
 	else
@@ -86,7 +86,7 @@ bool	check_day(std::string day, std::string month)
 	const int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int m = std::atoi(month.c_str());
 	int d = std::atoi(day.c_str());
-	
+
 	if (day.size() != 2)
 		return (false);
 	if (d < 1 || d > days_in_month[m - 1])
@@ -115,19 +115,18 @@ int parse(std::string line)
 	field1 = line.find('-');
 	if (field1 == std::string::npos)
 		return (BAD_INPUT);
-	year = line.substr(0, field1 - 1);
+	year = line.substr(0, field1);
 	if (!check_year(year))
 		return (BAD_INPUT);
 	field2 = line.find('-', field1 + 1);
 	if (field2 == std::string::npos)
 		return (BAD_INPUT);
-	month = line.substr(field1 + 1, field2);
+	month = line.substr(field1 + 1, 2);
 	if (!check_month(month))
 		return (BAD_INPUT);
-	day = line.substr(field2 + 1, index - 2);
+	day = line.substr(field2 + 1, 2);
 	if (!check_day(day, month))
 		return (BAD_INPUT);
-	date = line.substr(0, index - 2);
 	val = line.substr(index + 2);
 	return (check_val(val));
 }
@@ -135,7 +134,7 @@ int parse(std::string line)
 void	BitcoinExchange::print_val(std::string line)
 {
 	std::size_t	index = line.find('|');
-	std::string	date = line.substr(0, index - 2);
+	std::string	date = line.substr(0, index - 1);
 	double		val = std::atof(line.substr(index + 2).c_str());
 	std::map<std::string, double>::iterator iter = _map.find(date);
 	if (iter != _map.end())
@@ -152,7 +151,7 @@ void	BitcoinExchange::run(std::string input)
 	if (file.is_open())
 	{
 		getline(file, line);
-		if (line != "data | value")
+		if (line != "date | value")
 			std::cout << "Error : Check file head\n";
 		while (getline(file, line))
 		{

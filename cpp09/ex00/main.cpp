@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:36:39 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/13 20:36:39 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/19 18:10:38 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int ac, char **av)
 {
-	std::string path = "../../data.csv";
+	std::string path = "data.csv";
 	BitcoinExchange btc(path);
 
 	if (ac != 2)

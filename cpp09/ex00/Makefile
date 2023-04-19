@@ -6,7 +6,7 @@
 #    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/13 20:27:53 by min-cho           #+#    #+#              #
-#    Updated: 2023/04/13 20:27:53 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/04/19 18:03:50 by min-cho          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 OBJS_DIR	= ./objs
 
 SRCS =	main.cpp \
-		BitcoitExchange.cpp
+		BitcoinExchange.cpp
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
 

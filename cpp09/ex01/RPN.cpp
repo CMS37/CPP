@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 03:06:42 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/15 03:06:42 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/19 19:02:31 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void RPN::calculate(std::string str)
 			_s.push(str[i] - '0');
 		else if (is_oper(str[i]))
 		{
-			if (_s.size() != 2)
+			if (_s.size() < 2)
 			{
 				std::cout << "Error\n";
 				return;
@@ -58,16 +58,16 @@ void RPN::calculate(std::string str)
 			switch (str[i])
 			{
 				case '+':
-					_s.push(op2 + op1);
+					_s.push(op1 + op2);
 					break;
 				case '-':
-					_s.push(op2 - op1);
+					_s.push(op1 - op2);
 					break;
 				case '*':
-					_s.push(op2 * op1);
+					_s.push(op1 * op2);
 					break;
 				case '/':
-					_s.push(op2 / op1);
+					_s.push(op1 / op2);
 					break;
 			}
 		}
