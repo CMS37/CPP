@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:35:01 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/19 18:37:31 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/19 20:13:02 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ BitcoinExchange::BitcoinExchange(std::string path)
 				exit(0);
 			}
 			date = line.substr(0, index);
-			btc = std::atof(line.substr(index + 2).c_str());
+			btc = std::atof(line.substr(index + 1).c_str());
 			_map.insert(std::make_pair(date, btc));
 		}
 	}
@@ -137,6 +137,7 @@ void	BitcoinExchange::print_val(std::string line)
 	std::string	date = line.substr(0, index - 1);
 	double		val = std::atof(line.substr(index + 2).c_str());
 	std::map<std::string, double>::iterator iter = _map.find(date);
+	std::cout << std::setprecision(10);
 	if (iter != _map.end())
 		std::cout << date << " => " << val << " = " << val * iter->second << std::endl;
 	else
