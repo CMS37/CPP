@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 12:41:21 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 13:37:34 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	merge_sort(T &con)
 	}
 }
 
-void	PmergeMe::merge(int ac, char **av)
+void	PmergeMe::merge_insert_sort(int ac, char **av)
 {
 	int num;
 	_len = ac;

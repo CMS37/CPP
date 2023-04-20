@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:20 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 12:26:00 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 13:37:06 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class PmergeMe
 		PmergeMe(const PmergeMe &f);
 		PmergeMe& operator=(const PmergeMe &f);
 
-		void	merge(int ac, char **av);
+		void	merge_insert_sort(int ac, char **av);
 
 		std::vector<int>	getVec(void) const;
 		std::list<int>		getLst(void) const;
