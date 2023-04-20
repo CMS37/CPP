@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:20 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 10:17:55 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 12:26:00 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 # include <iostream>
 # include <vector>
-# include <array>
 # include <list>
 # include <sstream>
+# include <ctime>
+# include <iomanip>
 
 class PmergeMe
 {
@@ -25,6 +26,7 @@ class PmergeMe
 		size_t				_len;
 		std::vector<int>	_vec;
 		std::list<int>		_lst;
+		// std::deque<int>		_deq;
 	public:
 		PmergeMe();
 		~PmergeMe();
@@ -32,6 +34,9 @@ class PmergeMe
 		PmergeMe& operator=(const PmergeMe &f);
 
 		void	merge(int ac, char **av);
+
+		std::vector<int>	getVec(void) const;
+		std::list<int>		getLst(void) const;
 };
 
 #endif

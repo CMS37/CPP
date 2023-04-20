@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 11:03:00 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 12:37:27 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ PmergeMe::PmergeMe(const PmergeMe &f)
 
 PmergeMe&	PmergeMe::operator=(const PmergeMe &f)
 {
-	(void)f;
+	_vec = f.getVec();
+	_lst = f.getLst();
 	return (*this);
 }
 
@@ -35,13 +36,13 @@ void	merge_sort(T &con)
 
 	T left, right;
 	typename T::iterator it = con.begin();
-	typename T::size_type half_size = con.size() / 2; // 부호가 다른 정수와의 비교 오류 해결을 위해 size_type 사용
-	for (typename T::size_type i = 0; i < half_size; ++i) // size_type 사용
+	typename T::size_type half_size = con.size() / 2;
+	for (typename T::size_type i = 0; i < half_size; ++i)
 	{
 		left.push_back(*it);
 		++it;
 	}
-	for (typename T::size_type i = half_size; i < con.size(); ++i) // size_type 사용
+	for (typename T::size_type i = half_size; i < con.size(); ++i)
 	{
 		right.push_back(*it);
 		++it;
@@ -103,6 +104,7 @@ void	PmergeMe::merge(int ac, char **av)
 		{
 			_vec.push_back(num);
 			_lst.push_back(num);
+			// _deq.push_back(num);
 		}
 		else
 		{
@@ -115,13 +117,35 @@ void	PmergeMe::merge(int ac, char **av)
 		std::cout << av[i] << " ";
 	std::cout << std::endl;
 
-
+	clock_t s = clock();
 	merge_sort(_vec);
-	merge_sort(_lst);
+	double vec_time = static_cast<double>(clock() - s) / CLOCKS_PER_SEC;
 
+	s = clock();
+	merge_sort(_lst);
+	double lst_time = static_cast<double>(clock() - s) / CLOCKS_PER_SEC;
+	
+	// s = clock();
+	// merge_sort(_deq);
+	// double deq_time = static_cast<double>(clock() - s) / CLOCKS_PER_SEC;
+	
 	std::cout << "After: ";
 	std::vector<int>::iterator iter = _vec.begin();
 	for (; iter != _vec.end(); ++iter)
 		std::cout << *iter << " ";
 	std::cout << std::endl;
+	std::cout << std::fixed << std::setprecision(6);
+	std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << vec_time << " us\n";
+	std::cout << "Time to process a range of " << _lst.size() << " elements with std::list : " << lst_time << " us\n";
+	// std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << deq_time << " us\n";
+}
+
+std::vector<int>	PmergeMe::getVec(void) const
+{
+	return (_vec);
+}
+
+std::list<int>	PmergeMe::getLst(void) const
+{
+	return (_lst);
 }
