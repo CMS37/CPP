@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 00:11:23 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/20 08:55:30 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 09:09:07 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main(void)
 	std::cout << *it << std::endl;
 	++it;
 	}
+	std::stack<int> s(mstack);
 	std::cout << "---------list---------\n";
 	std::list<int> lst;
 	lst.push_back(5);
