@@ -6,20 +6,21 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 04:10:19 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/19 18:03:00 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 09:45:16 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PmergeMe.hpp"
 
-int	main(int argc, char** argv)
+int	main(int ac, char **av)
 {
-	if (argc < 2)
+	PmergeMe pm;
+
+	if (ac < 2)
 	{
 		std::cout << "Error\n";
 		return (0);
 	}
-
-	PmergeMe p_merg_me;
-	p_merg_me.merge_me(argv, argc);
+	pm.merge(ac, av);
 	return (0);
 }

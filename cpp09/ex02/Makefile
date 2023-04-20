@@ -6,18 +6,19 @@
 #    By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/13 20:27:28 by min-cho           #+#    #+#              #
-#    Updated: 2023/04/13 20:27:28 by min-cho          ###   ########seoul.kr   #
+#    Updated: 2023/04/20 09:58:03 by min-cho          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ex01
+NAME		=	PmergeMe
 
 CXX			= 	c++
 CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 
 OBJS_DIR	= ./objs
 
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		PmergeMe.cpp
 		
 
 OBJS := ${SRCS:%.cpp=${OBJS_DIR}/%.o}
