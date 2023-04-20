@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 12:37:27 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/20 12:41:21 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	merge_sort(T &con)
 			*it = *right_it;
 			++right_it;
 		}
-		it++;
+		++it;
 	}
 
 	while (left_it != left.end())
