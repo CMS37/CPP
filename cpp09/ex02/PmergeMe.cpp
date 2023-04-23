@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/23 19:02:17 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/23 23:29:26 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ template <typename T>
 void	insert_sort(T& con)
 {
 	typename T::iterator it, key;
-	for (it = std::next(con.begin()); it != con.end(); ++it) 
+	it = con.begin();
+	std::advance(it, 1);
+	for (; it != con.end(); ++it) 
 	{
 		key = it;
 		while (key != con.begin() && *std::prev(key) > *key)

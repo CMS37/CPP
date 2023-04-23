@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 03:06:42 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/19 19:02:31 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/24 00:58:24 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ void RPN::calculate(std::string str)
 			std::cout << "Error\n";
 			return;
 		}
+	}
+	if (_s.size() != 1)
+	{
+		std::cout << "Error\n";
+		return ;
 	}
 	std::cout << _s.top() << std::endl;
 }

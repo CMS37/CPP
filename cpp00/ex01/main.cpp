@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: min-cho <min-cho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 22:53:34 by min-cho           #+#    #+#             */
-/*   Updated: 2023/02/19 16:05:43 by min-cho          ###   ########.fr       */
+/*   Updated: 2023/04/23 19:44:12 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "PhoneBook > ";
-		std::getline(std::cin, cmd);
+	//	std::getline(std::cin, cmd);
+		getline(std::cin,cmd);
 		if (cmd == "ADD" || cmd == "add")
 			book.setInfo();
 		else if (cmd == "SERCH" || cmd == "serch")

@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:35:01 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/19 20:13:02 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/24 00:41:25 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,9 +137,11 @@ void	BitcoinExchange::print_val(std::string line)
 	std::string	date = line.substr(0, index - 1);
 	double		val = std::atof(line.substr(index + 2).c_str());
 	std::map<std::string, double>::iterator iter = _map.find(date);
-	std::cout << std::setprecision(10);
 	if (iter != _map.end())
+	{
+		std::cout << std::setprecision(15);
 		std::cout << date << " => " << val << " = " << val * iter->second << std::endl;
+	}
 	else
 		std::cout << "NO DATA : " << date << std::endl;
 }

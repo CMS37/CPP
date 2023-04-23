@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:34:38 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/19 19:46:02 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/24 00:48:24 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 # define BITCOINEXCHANEGE_HPP
 
 # include <iostream>
+# include <sstream>
 # include <fstream>
-# include <string>
 # include <map>
-#include <sstream>
 
 # define BAD_INPUT 10
 # define NOT_POS 11
