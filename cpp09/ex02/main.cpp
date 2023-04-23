@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 04:10:19 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 12:35:26 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/23 18:29:32 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 		std::cout << "Error\n";
 		return (0);
 	}
-	pm.merge(ac, av);
+	pm.merge_insert_sort(ac, av);
 	return (0);
 }
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 23:38:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/20 08:36:46 by min-cho          ###   ########seoul.kr  */
+/*   Created: 2023/04/23 19:12:53 by min-cho           #+#    #+#             */
+/*   Updated: 2023/04/23 19:12:54 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int		Span::shortestSpan(void)
 	std::vector<int>::iterator iter = dest.begin();
 	for(; iter != dest.end(); ++iter)
 	{
-		if (dest.end() == std::next(iter,1))
+		if (dest.end() == iter + 1)
 			break ;
-		tmp = *std::next(iter, 1) - *iter;
+		tmp = *(iter + 1) - *iter;
 		if(tmp < res)
 			res = tmp;
 	}

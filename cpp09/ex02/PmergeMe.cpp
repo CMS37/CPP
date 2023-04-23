@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/20 13:37:34 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/23 19:02:17 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,38 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe &f)
 	return (*this);
 }
 
+// template <typename T>
+// void insert_sort(T& con)
+// {
+//     for (typename T::size_type i = 1; i < con.size(); ++i)
+//     {
+//         typename T::value_type key = con[i];
+//         typename T::size_type j = i - 1;
+//         while (j >= 0 && con[j] > key)
+//         {
+//             con[j + 1] = con[j];
+//             --j;
+//         }
+//         con[j + 1] = key;
+//     }
+// }
+
+template <typename T>
+void	insert_sort(T& con)
+{
+	typename T::iterator it, key;
+	for (it = std::next(con.begin()); it != con.end(); ++it) 
+	{
+		key = it;
+		while (key != con.begin() && *std::prev(key) > *key)
+		{
+			std::iter_swap(std::prev(key), key);
+			--key;
+		}
+	}
+}
+
+
 template <typename T>
 void	merge_sort(T &con)
 {
@@ -48,8 +80,14 @@ void	merge_sort(T &con)
 		++it;
 	}
 
-	merge_sort(left);
-	merge_sort(right);
+	if (left.size() <= 50)
+		insert_sort(left);
+	else
+		merge_sort(left);
+	if (right.size() <= 50)
+		insert_sort(right);
+	else
+		merge_sort(right);
 
 	typename T::iterator left_it = left.begin();
 	typename T::iterator right_it = right.begin();
