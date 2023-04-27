@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:35:01 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/24 00:41:25 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/27 22:27:31 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,21 @@ bool	check_month(std::string month)
 	return (true);
 }
 
-bool	check_day(std::string day, std::string month)
+bool	check_day(std::string day, std::string month, std::string year)
 {
 	const int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int m = std::atoi(month.c_str());
 	int d = std::atoi(day.c_str());
-
+	int y = std::atoi(year.c_str());
+	
 	if (day.size() != 2)
 		return (false);
-	if (d < 1 || d > days_in_month[m - 1])
+    if (m == 2)
+    {
+        if (d < 1 || d > 29 || (d == 29 && ((y % 4 != 0) || (y % 100 == 0 && y % 400 != 0))))
+            return (false);
+	}
+	else if (d < 1 || d > days_in_month[m - 1])
 		return (false);
 	return (true);
 }
@@ -125,7 +131,7 @@ int parse(std::string line)
 	if (!check_month(month))
 		return (BAD_INPUT);
 	day = line.substr(field2 + 1, 2);
-	if (!check_day(day, month))
+	if (!check_day(day, month, year))
 		return (BAD_INPUT);
 	val = line.substr(index + 2);
 	return (check_val(val));

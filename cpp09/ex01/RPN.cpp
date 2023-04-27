@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 03:06:42 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/24 00:58:24 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/27 22:44:27 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ void RPN::calculate(std::string str)
 					_s.push(op1 * op2);
 					break;
 				case '/':
+					if(op2 == 0)
+					{
+						std::cout << "Error\n";
+						return ;
+					}
 					_s.push(op1 / op2);
 					break;
 			}
