@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:35:01 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/27 22:27:31 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/29 20:43:48 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ BitcoinExchange::BitcoinExchange(std::string path)
 	std::size_t		index;
 	double			btc;
 
-	_map.clear();
 	if (data.is_open())
 	{
 		getline(data, line);
