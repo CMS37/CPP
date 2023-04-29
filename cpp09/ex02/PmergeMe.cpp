@@ -6,7 +6,7 @@
 /*   By: min-cho <min-cho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:27:10 by min-cho           #+#    #+#             */
-/*   Updated: 2023/04/23 23:29:26 by min-cho          ###   ########seoul.kr  */
+/*   Updated: 2023/04/29 20:40:54 by min-cho          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,39 +28,22 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe &f)
 	return (*this);
 }
 
-// template <typename T>
-// void insert_sort(T& con)
-// {
-//     for (typename T::size_type i = 1; i < con.size(); ++i)
-//     {
-//         typename T::value_type key = con[i];
-//         typename T::size_type j = i - 1;
-//         while (j >= 0 && con[j] > key)
-//         {
-//             con[j + 1] = con[j];
-//             --j;
-//         }
-//         con[j + 1] = key;
-//     }
-// }
-
 template <typename T>
-void	insert_sort(T& con)
+void insert_sort(T& con)
 {
-	typename T::iterator it, key;
-	it = con.begin();
-	std::advance(it, 1);
-	for (; it != con.end(); ++it) 
-	{
-		key = it;
-		while (key != con.begin() && *std::prev(key) > *key)
-		{
-			std::iter_swap(std::prev(key), key);
-			--key;
-		}
-	}
+    typename T::iterator it, key;
+    it = con.begin();
+    ++it;
+    for (; it != con.end(); ++it) 
+    {
+        key = it;
+        while (key != con.begin() && *--key > *it)
+        {
+            std::iter_swap(key, it);
+            it = key;
+        }
+    }
 }
-
 
 template <typename T>
 void	merge_sort(T &con)
